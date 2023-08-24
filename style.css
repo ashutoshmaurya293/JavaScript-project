@@ -1,0 +1,39 @@
+.button {
+  height: 50px;
+  width: 100px;
+  size: 50px;
+  margin: 20px;
+  border-radius: 5px;
+  color: #2c0202;
+}
+#red {
+  background-color: red;
+}
+#yellow {
+  background-color: yellow;
+}
+#green {
+  background-color: green;
+}
+#black {
+  background-color: black;
+  color: #fff;
+}
+#orange {
+  background-color: orange;
+}
+#darkmagenta {
+  background-color: darkmagenta;
+}
+#aliceblue {
+  background-color: aliceblue;
+}
+#aliceblue {
+  background-color: aliceblue;
+}
+#aqua {
+  background-color: aqua;
+}
+#deepskyblue {
+  background-color: deepskyblue;
+}
