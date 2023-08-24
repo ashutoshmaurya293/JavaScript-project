@@ -29,5 +29,8 @@ button.forEach(function (button) {
     if (e.target.id === "deepskyblue") {
       body.style.backgroundColor = e.target.id;
     }
+    if (e.target.id === "indianred") {
+      body.style.backgroundColor = e.target.id;
+    }
   });
 });
