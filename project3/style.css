@@ -9,8 +9,6 @@
 .main {
     width: 100%;
     height: 100vh;
-    background: url('../image/1802071.webp') center center;
-    background-size: cover;
 }
 
 .overlay {
@@ -50,4 +48,19 @@ input {
     height: 50px;
     text-align: center;
     font-size: 30px;
+}
+.text{
+    margin-top: 40px;
+}
+.text input{
+width: 50vh;
+font-size: 16px;
+}
+.text button{
+    height: 40px;
+    width: 100px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 98, 255, 0.829);
+    color: #fff;
 }
