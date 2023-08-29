@@ -1,5 +1,15 @@
-<<<<<<< HEAD
-body {
+#myInput{
+  width: 65%;
+  border: 2px solid black;
+  margin-left: 50px;
+} 
+#button{
+  background-color: black;
+  color: #fff;
+  margin-left: 50px;
+}
+ 
+ body {
   background-color: #f2f2f2;
 }
 h1 {
@@ -26,32 +36,3 @@ input[type="submit"] {
   font-size: 20px;
   cursor: pointer;
 }
-=======
-body {
-  background-color: #f2f2f2;
-}
-h1 {
-  color: #333;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 50px;
-}
-input[type="text"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  font-size: 20px;
-}
-input[type="submit"] {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #333;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
->>>>>>> bdf5268e912bf4b57bc22745341a583b55e9fad2
