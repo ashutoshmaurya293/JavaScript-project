@@ -49,20 +49,18 @@ document.addEventListener("mousemove", function (dets) {
     top: dets.y,
   });
 });
-function cursor(){
-  document.querySelectorAll(".child").forEach(function(el){
-    el.addEventListener("mouseenter",function(){
-      gsap.to("#cursor",{
-        transform: "translate(-50%, -50%) scale(1)"
-      })
-  
-    })
-    el.addEventListener("mouseleave",function(){
-      gsap.to("#cursor",{
-        transform: "translate(-50%, -50%) scale(0)"
-      })
-      
-    })
-  })
+function cursor() {
+  document.querySelectorAll(".child").forEach(function (el) {
+    el.addEventListener("mouseenter", function () {
+      gsap.to("#cursor", {
+        transform: "translate(-50%, -50%) scale(1)",
+      });
+    });
+    el.addEventListener("mouseleave", function () {
+      gsap.to("#cursor", {
+        transform: "translate(-50%, -50%) scale(0)",
+      });
+    });
+  });
 }
 cursor();
