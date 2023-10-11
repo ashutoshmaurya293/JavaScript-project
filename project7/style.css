@@ -42,6 +42,10 @@ body {
   font-size: 14px;
   margin: 0 20px;
 }
+/* .dets p{
+  text-align: center;
+  margin-top: 20px;
+} */
 
 #icons {
   padding: 10px;
@@ -107,6 +111,9 @@ body {
   padding: 3vw 1vw;
   justify-content: space-between;
 }
+.dets p{
+  text-align: center;
+}
 
 #page2 .elem {
   height: 100%;
@@ -157,6 +164,11 @@ body {
 .child img {
   height: 100%;
 }
+@media (min-width: 700px){
+  .dets p{
+    margin-top: 20px;
+  }
+}
 @media (max-width: 600px) {
   #page1 h1 {
     font-size: 14vw;
@@ -194,13 +206,15 @@ body {
     justify-content: space-between;
     /* background-color: red; */
   }
-
   #page2 .elem {
     height: 100vh;
     width: 100%;
     /* background-color: red; */
     overflow: hidden;
     margin-bottom: 3vw;
+  }
+  .dets p{
+    margin-top: 10px;
   }
 
   #page2 .elem .dets {
@@ -211,4 +225,24 @@ body {
     z-index: 9;
     background-color: rgb(229, 156, 186);
   }
+#page3 {
+    min-height: 140vh;
+    width: 100%;
+    position: relative;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #page3 .child {
+    margin-left: 110px;
+    height: 64vh;
+  width: 39vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+  /* background-color: red; */
+}
 }
