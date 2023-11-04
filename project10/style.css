@@ -78,6 +78,11 @@ footer{
   flex-direction: column;
   margin-top: 50px;
 }
+.temp{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 @media screen and (max-width: 600px) {
   .nav {
