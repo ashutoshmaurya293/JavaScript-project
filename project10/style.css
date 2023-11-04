@@ -47,11 +47,22 @@ button:hover {
   justify-content: center;
   align-items: center;
   /* height: 400px; */
+  flex-direction: column;
 }
 .images img{
   height: 300px;
   width: 300px;
 }
+.humidity img {
+  height: 100px;  
+  width: 100px;
+}
+footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
 @media screen and (max-width: 600px) {
   .nav {
     display: flex;
