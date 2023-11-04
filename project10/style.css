@@ -15,7 +15,7 @@ button:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-color: #002ead;
-  transition: 0.7s;
+  transition: 0.2s;
 }
 
 /* Style the links inside the navigation bar */
@@ -50,17 +50,33 @@ button:hover {
   flex-direction: column;
 }
 .images img{
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 380px;
+}
+.humidity{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 .humidity img {
-  height: 100px;  
-  width: 100px;
+height: 50px;  
+  width: 50px;
 }
 footer{
   display: flex;
-  justify-content: space-between;
-  margin: 20px;
+  justify-content: space-evenly;
+  /* margin: 20px; */
+}
+.wild img{
+  height: 50px;  
+  width: 50px;
+}
+.wild{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 600px) {
@@ -86,5 +102,8 @@ footer{
     justify-content: center;
     margin-top: 0px;
     padding: 0px;
+  }
+  .images{
+    margin-top: 50px;
   }
 }
