@@ -8,10 +8,6 @@ const symble = "!@#$%^&*()_+~";
 const allchars = upp + loo + number+ symble;
 function CreatePassword() {
   let password = "";
-  password += upp[Math.floor(Math.random() * upp.length)];
-  password += loo[Math.floor(Math.random() * loo.length)];
-  password += number[Math.floor(Math.random() * number.length)];
-  password += symble[Math.floor(Math.random() * symble.length)];
   while (length > password.length) {
     password += allchars[Math.floor(Math.random() * allchars.length)];
   }
