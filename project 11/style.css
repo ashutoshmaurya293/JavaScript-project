@@ -30,7 +30,7 @@ body{
 ul{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     gap:2rem;
     padding: 4rem 5rem;
@@ -39,12 +39,11 @@ ul{
 li{
     list-style: none;
     min-width: 40%;
-    min-height: 7rem;
+    min-height: 5rem;
     border-radius: 7rem;
     border: 0.2rem solid black;
     padding: 0 7rem 0 3rem;
     font-size: 1.8rem;
-    font-weight: bold;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -60,6 +59,9 @@ input{
 input :checked{
 background-color: #8ec5fc;
 border-color: #8ec5fc;
+}
+.btn{
+    padding: 2rem 5rem;
 }
 button{
     padding: 0 5rem;
