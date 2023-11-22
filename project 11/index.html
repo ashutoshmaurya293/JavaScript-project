@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Quiz App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="quix-section">
-        <div id="Quiz">
-            <h2 class="question" id="question">quiz question</h2>
-            <hr><ul>
-               <li> <input type="radio" name="answer" class="answer" id="a"> <label id="raj" for="a">quiz option</label></li>
-               <li> <input type="radio" name="answer" class="answer" id="b"> <label for="b">quiz option</label></li>
-               <li> <input type="radio" name="answer" class="answer" id="c"> <label for="c">quiz option</label></li>
-               <li> <input type="radio" name="answer" class="answer" id="d"> <label for="d">quiz lorem10 option</label></li>
-            </ul>
-            <hr>
-            <div class="btn">
-                <button class="submit" id="submit" onclick="addTask()">submit</button>
-            </div>
+      <div id="Quiz">
+        <h2 class="question" id="question">quiz question</h2>
+        <hr />
+        <ul>
+          <li>
+            <input type="radio" name="answer" class="answer" id="a" />
+            <label class="option_1" for="a" id="option_1">quiz option1</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" class="answer" id="b" />
+            <label class="option_2" for="b" id="option_2">quiz option2</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" class="answer" id="c" />
+            <label class="option_3" for="c" id="option_3">quiz option3</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" class="answer" id="d" />
+            <label class="option_4" for="d" id="option_4">quiz option4</label>
+          </li>
+        </ul>
+        <hr />
+        <div class="btn">
+          <button class="submit" id="submit" onclick="addTask()">submit</button>
         </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
