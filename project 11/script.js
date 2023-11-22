@@ -7,7 +7,7 @@ const quizData = [
       "Hypertext Machine Language",
       "Hyperlink and Text Markup Language",
     ],
-    currect: 0,
+    correct: 0,
   },
   {
     question:
@@ -43,30 +43,51 @@ const [questionElem, option_1, option_2, option_3, option_4] =
   document.querySelectorAll(
     "#question, .option_1, .option_2, .option_3, .option_4"
   );
-
+const Quiz = document.getElementById("Quiz");
 const submit = document.getElementById("submit");
 
-const currentQuiz = 0;
-const score = 0;
+let currentQuiz = 0;
+let score = 0;
 
 const Loadquiz = () => {
   const { question, options } = quizData[currentQuiz];
   // console.log(options);
-  questionElem.innerText = question;
+  questionElem.innerText = `${currentQuiz + 1}:${question}`;
   options.forEach((el, i) => (window[`option_${i + 1}`].innerText = el));
 };
 Loadquiz();
-const getSelectedOption=()=>{
-  let ansIndex;
-  answerElm.forEach((el,i)=>{
-  if (el.checked) {
-    ansIndex = i
-  }
-  })
-  return ansIndexction
-}
+const getSelectedOption = () => {
+  // let ansIndex;
+  // answerElm.forEach((el,i)=>{
+  // if (el.checked) {
+  //   ansIndex = i
+  // }
+  // })
+  // return ansIndex
+  let answerElement = Array.from(answerElm);
+  return answerElement.findIndex((el) => el.checked);
+};
 
-function addTask(){
-const selectedOptonIndex = getSelectedOption()
-console.log(selectedOptonIndex);
+const deSelected = () => {
+  answerElm.forEach((el) => (el.checked = false));
+};
+
+function addTask() {
+  const selectedOptonIndex = getSelectedOption();
+  console.log(selectedOptonIndex);
+  if (selectedOptonIndex === quizData[currentQuiz].correct) {
+    score = score + 1;
+    console.log(score);
+  }
+  deSelected();
+  currentQuiz++;
+  if (currentQuiz < quizData.length) {
+    Loadquiz();
+  } else {
+    Quiz.innerHTML = `
+    
+    <div class="result">
+    <h2>Your score: ${score}/${quizData.length}</h2>
+</div>`;
+  }
 }
