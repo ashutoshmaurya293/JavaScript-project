@@ -53,10 +53,20 @@ const Loadquiz = () => {
   const { question, options } = quizData[currentQuiz];
   // console.log(options);
   questionElem.innerText = question;
-options.forEach(
-    (el,i)=>(window[`option_${i+1}`].innerText = el)
-   
-  
-);
+  options.forEach((el, i) => (window[`option_${i + 1}`].innerText = el));
 };
 Loadquiz();
+const getSelectedOption=()=>{
+  let ansIndex;
+  answerElm.forEach((el,i)=>{
+  if (el.checked) {
+    ansIndex = i
+  }
+  })
+  return ansIndexction
+}
+
+function addTask(){
+const selectedOptonIndex = getSelectedOption()
+console.log(selectedOptonIndex);
+}
