@@ -42,6 +42,36 @@ nav{
     border-radius: 4px;
     margin-inline: 17px; ;
 }
+#showData{
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    
+}
+
+#showData img{
+    height: 80%;
+    width: 300px;
+    border-radius:5px ;
+object-fit: cover;
+}
+.more{
+    display: none;
+    text-align: center;
+    padding: 22px;
+}
+#moreBTN{
+    height: 40px;
+    width: 140px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 @media screen and (max-width: 600px) {
  .search button{
     font-size: 15px;
@@ -50,4 +80,15 @@ nav{
  .search input{
     width: 90%;
  }
+ #showData{
+
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
+    
+}
+ #showData img{
+    height: 80%;
+    width: 190px;
+    border-radius:5px ;
+}
 }
