@@ -13,7 +13,7 @@ const getData = async (searchInputValue, pageNo) => {
     let jsonData = await fech.json();
     if (searchInput.value == "") {
       showData.innerHTML = `
-      <h1>pleace search</h1>
+      <h1>pleace search something....</h1>
       `;
     } else {
       document.querySelector(".more").style.display = "block";

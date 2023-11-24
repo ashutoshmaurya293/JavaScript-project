@@ -33,15 +33,20 @@ nav{
 }
 
 .search button{
+    cursor: pointer;
     width: 90px;
     height: 38px;
     border: none;
-    background-color: aqua;
+    background-color: #3498db;
     color: white;
     font-size: 20px;
     border-radius: 4px;
     margin-inline: 17px; ;
+    &:hover{
+        background-color:  #2980b9;
+    }
 }
+
 #showData{
     margin: auto;
     display: grid;
@@ -65,13 +70,20 @@ object-fit: cover;
 #moreBTN{
     height: 40px;
     width: 140px;
-    background-color: blue;
+    background-color: #3498db;
     color: white;
     font-size: 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    &:hover{
+        background-color: #2980b9;
+    }
 }
+/* Button click effect */
+button:active {
+    transform: scale(0.95);
+  }
 @media screen and (max-width: 600px) {
  .search button{
     font-size: 15px;
@@ -82,7 +94,7 @@ object-fit: cover;
  }
  #showData{
 
-    width: 90%;
+    width: 97%;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
     
 }
