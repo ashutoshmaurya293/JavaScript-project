@@ -51,13 +51,13 @@ nav{
     margin: auto;
     display: grid;
     justify-content: center;
-    width: 80%;
+    width: 85%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
     
 }
 
 #showData img{
-    height: 80%;
+    height: 89%;
     width: 300px;
     border-radius:5px ;
 object-fit: cover;
@@ -84,6 +84,20 @@ object-fit: cover;
 button:active {
     transform: scale(0.95);
   }
+  /* a{
+    width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } */
+
+  .card p{
+    /* background-color: red; */
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 @media screen and (max-width: 600px) {
  .search button{
     font-size: 15px;
@@ -102,5 +116,12 @@ button:active {
     height: 80%;
     width: 190px;
     border-radius:5px ;
-}
+} 
+ .card p{
+    /* background-color: red; */
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

@@ -3,7 +3,7 @@ let searchInput = document.getElementById("searchInput");
 let button = document.getElementById("btn");
 let showData = document.getElementById("showData");
 let moreBTN = document.getElementById("moreBTN");
-let page = 1;
+let page = 2;
 
 const getData = async (searchInputValue, pageNo) => {
   try {
@@ -25,7 +25,7 @@ const getData = async (searchInputValue, pageNo) => {
       showData.appendChild(div);
       div.innerHTML = `
       <img src=${e.urls.small_s3} alt="image">
-<a href=${e.links.html} target = _blank>${e.alt_description}</a>
+<a href=${e.links.html} target = _blank><p>${e.alt_description}</p></a>
       `;
     });
   } catch (error) {
@@ -37,7 +37,13 @@ button.addEventListener("click", function () {
   showData.innerHTML = "";
   const searchInputValue = searchInput.value;
   getData(searchInputValue);
+  setTimeout(input, 1000);
+
 });
+function input(){
+  searchInput.value = ""
+
+}
 moreBTN.addEventListener("click", function () {
   const searchInputValue = searchInput.value;
   getData(searchInputValue, page++);
