@@ -34,11 +34,14 @@ const getData = async (searchInputValue, pageNo) => {
   }
 };
 
-button.addEventListener("click", function (e) {
-e.preventDefault()
+button.addEventListener("click", function () {
+  document.getElementById("loading").style.display = "block";
+setTimeout(() => {
+  document.getElementById("loading").style.display = "none";
   showData.innerHTML = "";
   const searchInputValue = searchInput.value;
   getData(searchInputValue);
+}, 2000);
 });
 
 moreBTN.addEventListener("click", function () {
