@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    <style>
+   
+    </style>
   </head>
   <body>
       <div class="container">
@@ -14,7 +17,10 @@
           </div>
           <div class="search">
             <input type="text" placeholder="Search Images...." id="searchInput" />
-            <button id="btn">Search</button>
+            <button id="btn" class="loader-button" onclick="startLoading()">
+              <span>Search</span>
+              <div class="loader"></div>
+            </button>
           </div>
         </nav>
         <div id="showData"></div>

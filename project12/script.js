@@ -34,14 +34,28 @@ const getData = async (searchInputValue, pageNo) => {
   }
 };
 
-button.addEventListener("click", function () {
-  showData.innerHTML = "";
-  const searchInputValue = searchInput.value;
-  getData(searchInputValue);
+// button.addEventListener("click", function () {
+//   showData.innerHTML = "";
+//   const searchInputValue = searchInput.value;
+//   getData(searchInputValue);
 
-});
+// });
 
 moreBTN.addEventListener("click", function () {
   const searchInputValue = searchInput.value;
   getData(searchInputValue, page++);
 });
+
+
+
+
+function startLoading() {
+  var button = document.getElementById('btn');
+  button.classList.add('loading');
+  setTimeout(function() {
+    showData.innerHTML = "";
+    const searchInputValue = searchInput.value;
+    getData(searchInputValue);
+    button.classList.remove('loading');
+  }, 2000); 
+}

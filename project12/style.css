@@ -32,7 +32,7 @@ nav{
 
 }
 
-.search button{
+/* .search button{
     cursor: pointer;
     width: 90px;
     height: 38px;
@@ -45,7 +45,65 @@ nav{
     &:hover{
         background-color:  #2980b9;
     }
-}
+} */
+
+
+   /* Button styles */
+   .loader-button {
+    height: 40px;
+    width: 95px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    margin-inline: 17px;
+    &:hover{
+        background-color:  #2980b9;
+    }
+  }
+  .loader-button:active {
+    
+        transform: scale(0.95);
+      
+  }
+
+  /* Loader styles */
+  .loader {
+    display: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Loader animation */
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Active state for the button */
+  .loading .loader {
+    display: inline-block;
+  }
+
+  .loading span {
+    visibility: hidden;
+  }
+
 
 #showData{
     margin: auto;
@@ -81,9 +139,7 @@ object-fit: cover;
     }
 }
 /* Button click effect */
-button:active {
-    transform: scale(0.95);
-  }
+
   /* a{
     width: 10px;
     white-space: nowrap;
@@ -111,10 +167,9 @@ button:active {
     z-index: 9999;
   }
 @media screen and (max-width: 600px) {
- .search button{
-    font-size: 15px;
-    margin-inline:5px ;
- }
+    .loader {
+        width: 25px;
+    }
  .search input{
     width: 90%;
  }
@@ -136,4 +191,12 @@ button:active {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .loader-button {
+    margin-inline: 10px;
+    font-size: 15px;
+}
+.loader {
+    width: 15px;
+    height: 15px;
+}
 }
