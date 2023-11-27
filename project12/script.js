@@ -15,11 +15,11 @@ const getData = async (searchInputValue, pageNo) => {
       showData.innerHTML = `
       <h1>pleace search something....</h1>
       `;
-      // document.querySelector(".more").style.display = "none";
+      document.querySelector(".more").style.display = "none";
     } else {
       document.querySelector(".more").style.display = "block";
     }
-    jsonData.results.map( (e) => {
+    jsonData.results.map((e) => {
       console.log(e);
       let div = document.createElement("div");
       div.classList.add("card");
@@ -34,40 +34,23 @@ const getData = async (searchInputValue, pageNo) => {
   }
 };
 
-// button.addEventListener("click", function () {
-//   showData.innerHTML = "";
-//   const searchInputValue = searchInput.value;
-//   getData(searchInputValue);
-
-// });
-
-// moreBTN.addEventListener("click", function () {
-//   const searchInputValue = searchInput.value;
-//   getData(searchInputValue, page++);
-// });
-
-
-
-
 function startLoading() {
-  var button = document.getElementById('btn');
-  button.classList.add('loading');
-  setTimeout(function() {
+  var button = document.getElementById("btn");
+  button.classList.add("loading");
+  setTimeout(function () {
     showData.innerHTML = "";
     const searchInputValue = searchInput.value;
     getData(searchInputValue);
-    button.classList.remove('loading');
-  }, 2000); 
+    button.classList.remove("loading");
+  }, 1000);
 }
 
-function Loading(){
-  var button = document.getElementById('btnk');
-  button.classList.add('loadingk');
+function Loading() {
+  var button = document.getElementById("moreBtn");
+  button.classList.add("moreLoading");
   setTimeout(() => {
     const searchInputValue = searchInput.value;
     getData(searchInputValue, page++);
-    button.classList.remove('loadingk');
-
-  }, 2000);
-
+    button.classList.remove("moreLoading");
+  }, 1000);
 }

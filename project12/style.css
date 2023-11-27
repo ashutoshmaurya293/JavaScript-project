@@ -1,198 +1,164 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-*{
-    margin: 0;padding: 0;
-
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family: Roboto;
+body {
+  font-family: Roboto;
 }
-nav{
-    padding: 30px;
-
+nav {
+  padding: 30px;
 }
-.text{
-    text-align: center;
-    font-size: 20px;
-
+.text {
+  text-align: center;
+  font-size: 20px;
 }
-.search{
-    display: flex;
-    justify-content: center;
-    margin-top: 22px;
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
 }
-.search input{
-    width: 300px;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 1px; 
-    background-color: #ebe9e9;
-
+.search input {
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 1px;
+  background-color: #ebe9e9;
 }
-
-/* .search button{
-    cursor: pointer;
-    width: 90px;
-    height: 38px;
-    border: none;
-    background-color: #3498db;
-    color: white;
-    font-size: 20px;
-    border-radius: 4px;
-    margin-inline: 17px; ;
-    &:hover{
-        background-color:  #2980b9;
-    }
-} */
-
-
-   /* Button styles */
-   .loader-button {
-    height: 40px;
-    width: 95px;
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 5px;
-    margin-inline: 17px;
-    &:hover{
-        background-color:  #2980b9;
-    }
+.loader-button {
+  height: 40px;
+  width: 95px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  margin-inline: 17px;
+  &:hover {
+    background-color: #2980b9;
   }
-  .loader-button:active {
-    
-        transform: scale(0.95);
-      
-  }
-
-  /* Loader styles */
-  .loader {
-    display: none;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* Loader animation */
-  @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  /* Active state for the button */
-  .loading .loader {
-    display: inline-block;
-  }
-
-  .loading span {
-    visibility: hidden;
-  }
-  .loadingk .loader {
-    display: inline-block;
-  }
-
-  .loadingk span {
-    visibility: hidden;
-  }
-
-#showData{
-    margin: auto;
-    display: grid;
-    justify-content: center;
-    width: 85%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-    
+}
+.loader-button:active {
+  transform: scale(0.95);
 }
 
-#showData img{
-    height: 89%;
-    width: 300px;
-    border-radius:5px ;
-object-fit: cover;
+.loader {
+  display: none;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.more{
-    display: none;
-    text-align: center;
-    padding: 22px;
+#moreBtn {
+  width: 150px;
 }
-#moreBTN{
-    height: 40px;
-    width: 140px;
-    background-color: #3498db;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    &:hover{
-        background-color: #2980b9;
-    }
-}
-/* Button click effect */
-
-  /* a{
-    width: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  } */
-
-  .card p{
-    /* background-color: red; */
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  #loading {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 9999;
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+.loading .loader {
+  display: inline-block;
+}
+
+.loading span {
+  visibility: hidden;
+}
+.moreLoading .loader {
+  display: inline-block;
+}
+
+.moreLoading span {
+  visibility: hidden;
+}
+
+#showData {
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  width: 85%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#showData img {
+  height: 89%;
+  width: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.more {
+  display: none;
+  text-align: center;
+  padding: 22px;
+}
+#moreBTN {
+  height: 40px;
+  width: 140px;
+  background-color: #3498db;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #2980b9;
+  }
+}
+.card p {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#loading {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999;
+}
 
 @media screen and (max-width: 600px) {
-    .loader {
-        width: 25px;
-    }
- .search input{
+  .loader {
+    width: 25px;
+  }
+  .search input {
     width: 90%;
- }
- #showData{
-
+  }
+  #showData {
     width: 97%;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
-    
-}
- #showData img{
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+  #showData img {
     height: 80%;
     width: 190px;
-    border-radius:5px ;
-} 
- .card p{
-    /* background-color: red; */
+    border-radius: 5px;
+  }
+  .card p {
     width: 150px;
     white-space: nowrap;
     overflow: hidden;
@@ -201,9 +167,12 @@ object-fit: cover;
   .loader-button {
     margin-inline: 10px;
     font-size: 15px;
-}
-.loader {
+  }
+  .loader {
     width: 15px;
     height: 15px;
-}
+  }
+  #moreBtn {
+    width: 110px;
+  }
 }

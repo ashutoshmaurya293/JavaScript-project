@@ -5,33 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-    <style>
-   
-    </style>
   </head>
   <body>
-      <div class="container">
-        <nav>
-          <div class="text">
-            <h1>Image Search App</h1>
-          </div>
-          <div class="search">
-            <input type="text" placeholder="Search Images...." id="searchInput" />
-            <button id="btn" class="loader-button" onclick="startLoading()">
-              <span>Search</span>
-              <div class="loader"></div>
-            </button>
-          </div>
-        </nav>
-        <div id="showData"></div>
-        <div class="more">
-          <button id="btnk" class="loader-button" onclick="Loading()">
-            <span>Load more</span>
+    <div class="container">
+      <nav>
+        <div class="text">
+          <h1>Image Search App</h1>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search Images...." id="searchInput" />
+          <button id="btn" class="loader-button" onclick="startLoading()">
+            <span>Search</span>
             <div class="loader"></div>
           </button>
         </div>
+      </nav>
+      <div id="showData"></div>
+      <div class="more">
+        <button id="moreBtn" class="loader-button" onclick="Loading()">
+          <span>Load more</span>
+          <div class="loader"></div>
+        </button>
       </div>
-    
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
