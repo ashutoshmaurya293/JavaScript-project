@@ -15,7 +15,7 @@ const getData = async (searchInputValue, pageNo) => {
       showData.innerHTML = `
       <h1>pleace search something....</h1>
       `;
-      document.querySelector(".more").style.display = "none";
+      // document.querySelector(".more").style.display = "none";
     } else {
       document.querySelector(".more").style.display = "block";
     }
@@ -41,10 +41,10 @@ const getData = async (searchInputValue, pageNo) => {
 
 // });
 
-moreBTN.addEventListener("click", function () {
-  const searchInputValue = searchInput.value;
-  getData(searchInputValue, page++);
-});
+// moreBTN.addEventListener("click", function () {
+//   const searchInputValue = searchInput.value;
+//   getData(searchInputValue, page++);
+// });
 
 
 
@@ -58,4 +58,16 @@ function startLoading() {
     getData(searchInputValue);
     button.classList.remove('loading');
   }, 2000); 
+}
+
+function Loading(){
+  var button = document.getElementById('btnk');
+  button.classList.add('loadingk');
+  setTimeout(() => {
+    const searchInputValue = searchInput.value;
+    getData(searchInputValue, page++);
+    button.classList.remove('loadingk');
+
+  }, 2000);
+
 }

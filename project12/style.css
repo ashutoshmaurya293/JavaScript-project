@@ -103,7 +103,13 @@ nav{
   .loading span {
     visibility: hidden;
   }
+  .loadingk .loader {
+    display: inline-block;
+  }
 
+  .loadingk span {
+    visibility: hidden;
+  }
 
 #showData{
     margin: auto;
@@ -166,6 +172,7 @@ object-fit: cover;
     border-radius: 10px;
     z-index: 9999;
   }
+
 @media screen and (max-width: 600px) {
     .loader {
         width: 25px;
