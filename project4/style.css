@@ -85,6 +85,11 @@ ul li.checked::before{
 background-image: url(image/checked.png);
 }
 ul li span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 15px;
     position: absolute;
     right: 0;
     top: 5px;
@@ -93,8 +98,11 @@ ul li span{
     color: #555;
     line-height: 40xp;
     align-items: center;
-    border-radius: 40%;
+    border-radius: 50%;
 }
 ul li span:hover{
-    background: #edeef0;
+    background: #9c9c9d;
+    &:active{
+        scale: 1.1;
+    }
 }
