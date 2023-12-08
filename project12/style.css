@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -50,7 +49,6 @@ nav {
 .loader-button:active {
   transform: scale(0.95);
 }
-
 .loader {
   display: none;
   border: 4px solid rgba(255, 255, 255, 0.3);

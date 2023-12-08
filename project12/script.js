@@ -20,7 +20,7 @@ const getData = async (searchInputValue, pageNo) => {
       document.querySelector(".more").style.display = "block";
     }
     jsonData.results.map((e) => {
-      console.log(e);
+      // console.log(e);
       let div = document.createElement("div");
       div.classList.add("card");
       showData.appendChild(div);
