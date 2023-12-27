@@ -138,6 +138,24 @@ input{
   width: 100%;
   object-fit: contain;
 }
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading .h1{
+  height: 1px;
+  width: 243px;
+  background-color: #353543;
+}
+.tag{
+  color: #353543;
+  background-color: #fff;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.4px;
+  padding: 0 3rem;
+}
 @media (min-width: 768px) {
   .icon {
     display: none;
@@ -177,10 +195,22 @@ input{
     width: 100px;
     }
     .first{
-      margin: 3rem auto;
-      height: 250px;
+      margin: 10rem 1rem 2rem;
+      height: 150px;
     }
     .first img{
-      object-fit: contain;
+      object-fit: cover;
+    }
+    .heading .h1{
+      height: 1px;
+      width: 43px;
+      background-color: #353543;
+    }
+    .tag{
+      color: #353543;
+      background-color: #fff;
+      font-size: 19px;
+      letter-spacing: 0.4px;
+      padding: 0 1rem;
     }
 }
