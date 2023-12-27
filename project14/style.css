@@ -156,6 +156,17 @@ input{
   letter-spacing: 0.4px;
   padding: 0 3rem;
 }
+.second{
+  margin: 3.5rem auto;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  }
+.second img{
+  height: 100%;
+  width: 88%;
+  object-fit: cover;
+}
 @media (min-width: 768px) {
   .icon {
     display: none;
@@ -199,7 +210,7 @@ input{
       height: 150px;
     }
     .first img{
-      object-fit: cover;
+      object-fit: contain;
     }
     .heading .h1{
       height: 1px;
@@ -212,5 +223,13 @@ input{
       font-size: 19px;
       letter-spacing: 0.4px;
       padding: 0 1rem;
+    }
+    .second{
+      margin: 2rem auto;
+      }
+    .second img{
+      height: 50%;
+      width: 88%;
+      object-fit: contain;
     }
 }
