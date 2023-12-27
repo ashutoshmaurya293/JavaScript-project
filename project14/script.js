@@ -9,11 +9,11 @@ function change() {
   if (Icon) {
     hellow.className = "fa-solid fa-xmark";
     Icon = !Icon;
-    mainDrower.style.display = "block";
-    backdrop.style.display = "block";
+    mainDrower.style.visibility = "visible";
+    backdrop.style.visibility = "visible";
   } else {
-    mainDrower.style.display = "none";
-    backdrop.style.display = "none";
+    mainDrower.style.visibility = "hidden";
+    backdrop.style.visibility = "hidden";
     hellow.className = "fa-solid fa-bars";
     Icon = !Icon;
   }
