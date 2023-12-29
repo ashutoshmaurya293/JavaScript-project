@@ -168,14 +168,16 @@ input{
   object-fit: cover;
 }
 .fullCart{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 88%;
   /* background-color: yellow;   */
   margin: 1rem auto;
 }
 .cart{
-  height: 420px;
+  height: 400px;
   width: 250px;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   border: 0.5px solid rgba(0, 0, 0, 0.548);
@@ -190,6 +192,9 @@ input{
   width: 100%;
   object-fit: contain;
 }
+  /* .element {
+    background-color: antiquewhite;
+  } */
 .element p{
   margin: 1rem 1rem;
 }
@@ -199,12 +204,37 @@ input{
   line-height: 20px;
   letter-spacing: 0.5px;
 }
-.price span{
+.price-c{
+  font-size: 12px;
+  line-height: 16px;
+ color: #353543;
+ padding: 0.5rem;
+}
+.price{
   color: #353543;
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 0.5px;
   font-weight: 500;
+}
+.delivery{
+line-height: 24px;
+font-size: 16px;
+color: #353543;
+
+}
+.element button{
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 20px;
+  border: none;
+  background-color: #9f2089;
+  color: #fff;
+  &:active{
+    scale: 1.05;
+  }
 }
 @media (min-width: 768px) {
   .icon {
@@ -264,11 +294,68 @@ input{
       padding: 0 1rem;
     }
     .second{
-      margin: 2rem auto;
+      margin: 0.5rem auto;
+      height: 200px;
+      display: flex;
+      justify-content: center;
       }
-    .second img{
-      height: 50%;
-      width: 88%;
-      object-fit: contain;
-    }
+      .fullCart{
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        width: 98%;
+        /* background-color: yellow;   */
+        margin: 1rem auto;
+      }
+      .cart{
+        height: 300px;
+        width: 185px;
+        display: flex;
+        flex-direction: column;
+        border: 0.5px solid rgba(0, 0, 0, 0.548);
+      }
+      .cartImg{
+        height: 55%;
+        /* width: px; */
+        padding: 1rem 0;
+      }
+      .cartImg img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .element p{
+        margin: 1rem 1rem;
+      }
+      .name{
+        font-size: 10px;
+
+        line-height: 12px;
+        letter-spacing: 0.5px;
+      }
+      .price-c{
+        font-size: 12px;
+        line-height: 16px;
+
+      }
+      .price{
+        font-size: 15px;
+        line-height: 20px;
+
+      }
+      .delivery{
+      line-height: 24px;
+      font-size: 12px;
+      
+      }
+      .element button{
+        font-size: 12px;
+        line-height: 20px;
+   
+      }
+
 }
