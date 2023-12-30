@@ -312,13 +312,13 @@ color: #353543;
       }
       .cart{
         height: 300px;
-        width: 185px;
+        width: 170px;
         display: flex;
         flex-direction: column;
         border: 0.5px solid rgba(0, 0, 0, 0.548);
       }
       .cartImg{
-        height: 55%;
+        height: 60%;
         /* width: px; */
         padding: 1rem 0;
       }

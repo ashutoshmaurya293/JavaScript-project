@@ -30,10 +30,13 @@ button:hover {
   font-size: 17px;
 }
 #city{
-  /* background-color: red; */
   position: absolute;
-  top: 100px;
-  left: 170px;
+  top: 95px;
+  left: 130px;
+  background-color: #0a0a231e;
+  padding: 0.4rem 1.5rem;
+  border-radius: 5px;
+  border: 0.5px solid black;
 }
 .nav {
   display: flex;
@@ -43,11 +46,20 @@ button:hover {
 .nav input {
   width: 400px;
   height: 30px;
+  font-size: 14px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1.5px solid black;
 }
 .nav button {
   height: 30px;
   margin-left: 5px;
   width: 75px;
+  font-size: 14px;
+  border-radius: 5px;
+  &:active{
+    scale: 1.05;
+  }
 }
 .images{
   display: flex;
