@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');* {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins;
+}
+body{
+  background-color: aquamarine;
 }
 .nav2 {
   margin-top: 15px;
@@ -29,7 +33,7 @@ button:hover {
   text-decoration: none;
   font-size: 17px;
 }
-#city{
+#city {
   position: absolute;
   top: 95px;
   left: 130px;
@@ -57,47 +61,47 @@ button:hover {
   width: 75px;
   font-size: 14px;
   border-radius: 5px;
-  &:active{
+  &:active {
     scale: 1.05;
   }
 }
-.images{
+.images {
   display: flex;
   justify-content: center;
   align-items: center;
   /* height: 400px; */
   flex-direction: column;
 }
-.images img{
+.images img {
   height: 350px;
   width: 380px;
 }
-.humidity{
+.humidity {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 50px;
 }
 .humidity img {
-height: 50px;  
+  height: 50px;
   width: 50px;
 }
-footer{
+footer {
   display: flex;
   justify-content: space-evenly;
   /* margin: 20px; */
 }
-.wild img{
-  height: 50px;  
+.wild img {
+  height: 50px;
   width: 50px;
 }
-.wild{
+.wild {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 50px;
 }
-.temp{
+.temp {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -127,7 +131,7 @@ footer{
     margin-top: 0px;
     padding: 0px;
   }
-  .images{
+  .images {
     margin-top: 50px;
   }
 }

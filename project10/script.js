@@ -16,11 +16,11 @@ async function cheakWeather(city) {
   Temperature.innerHTML = `${Math.round(
     weather_data.main.temp - 273.15
   )} <sup>°C</sup>`;
-  cityName.innerHTML = weather_data.name
+  cityName.innerHTML = weather_data.name;
   dsc.innerHTML = `${weather_data.weather[0].description}`;
   Humidity.innerHTML = `${weather_data.main.humidity}%`;
   Speed.innerHTML = `${weather_data.wind.speed}km/h`;
-  
+
   switch (weather_data.weather[0].main) {
     case "Clouds":
       images.src = "images/clouds.png";
@@ -35,15 +35,14 @@ async function cheakWeather(city) {
     case "Snow":
       images.src = "images/snow.png";
   }
-  InputBox.value = ""
+  InputBox.value = "";
   console.log(weather_data.name);
 }
 
 Search.addEventListener("click", function (e) {
   cheakWeather(InputBox.value);
-  e.preventDefault()
+  e.preventDefault();
 });
-
 
 async function ins() {
   const api_key = "050e5235e4f3ad7be2de6e6087ea168e";
@@ -54,7 +53,7 @@ async function ins() {
   Temperature.innerHTML = `${Math.round(
     weather_data.main.temp - 273.15
   )} <sup>°C</sup>`;
-  cityName.innerHTML = weather_data.name
+  cityName.innerHTML = weather_data.name;
 
   dsc.innerHTML = `${weather_data.weather[0].description}`;
   Humidity.innerHTML = `${weather_data.main.humidity}%`;
@@ -73,8 +72,8 @@ async function ins() {
     case "Snow":
       images.src = "images/snow.png";
   }
-  InputBox.value = ""
+  InputBox.value = "";
   // console.log(weather_data);
 }
 
-ins()
+ins();
