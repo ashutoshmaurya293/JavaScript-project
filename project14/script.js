@@ -21,15 +21,15 @@ function change() {
 icon.addEventListener("click", change);
 backdrop.addEventListener("click", change);
 
-const api = async()=>{
-  const url = 'https://fakestoreapi.com/products'
- try {
-  const result = await fetch(url).then((res)=>res.json())
-  console.log(result);
-  const fullCart = document.querySelector(".fullCart")
-let innerHTML = ''
-result.forEach((e)=>{
-  innerHTML +=  `
+const api = async () => {
+  const url = "https://fakestoreapi.com/products";
+  try {
+    const result = await fetch(url).then((res) => res.json());
+    console.log(result);
+    const fullCart = document.querySelector(".fullCart");
+    let innerHTML = "";
+    result.forEach((e) => {
+      innerHTML += `
   <div class="cart">
   <div class="cartImg">
     <img
@@ -40,22 +40,18 @@ result.forEach((e)=>{
   <div class="element">
     <p class="name">${e.title}</p>
     <p>
-      <span class="price">₹${e.price*8}</span>
+      <span class="price">₹${e.price * 8}</span>
       <span class="price-c">overwords</span>
     </p>
     <p class="delivery">Free Delivery</p>
     <button>Add To Cart</button>
   </div>
   </div>
-  `
-})
-fullCart.innerHTML =innerHTML
- } catch (error) {
-  console.log(error);
- }
-}
-api()
-
-
-
-
+  `;
+    });
+    fullCart.innerHTML = innerHTML;
+  } catch (error) {
+    console.log(error);
+  }
+};
+api();
