@@ -20,31 +20,58 @@ function change() {
 }
 icon.addEventListener("click", change);
 backdrop.addEventListener("click", change);
+let bagItems
+let bagLength = document.querySelector(".bagLength")
+let bagLengthMobile = document.querySelector(".bagLengthMobile")
+load()
+function load(){
+  let bagItemStr = localStorage.getItem("bagItems")
+  bagItems = bagItemStr ? JSON.parse(bagItemStr):[]
+  loadHomnePage()
+  bagIcon()
 
+}
+
+function bagIcon(){
+  bagLength.innerHTML = bagItems.length
+  bagLengthMobile.innerHTML = bagItems.length
+
+}
+
+function addToCart(id){
+  bagItems.push(id)
+  localStorage.setItem("bagItems",JSON.stringify(bagItems))
+  console.log(bagItems);
+  bagIcon()
+
+}
+
+function loadHomnePage(){
 const api = async () => {
   const url = "https://fakestoreapi.com/products";
   try {
     const result = await fetch(url).then((res) => res.json());
-    console.log(result);
+    // console.log(result);
     const fullCart = document.querySelector(".fullCart");
+    if(!fullCart)return
     let innerHTML = "";
     result.forEach((e) => {
       innerHTML += `
   <div class="cart">
   <div class="cartImg">
     <img
-      src=${e.image}
+      src=${e?.image}
       alt=""
     />
   </div>
   <div class="element">
-    <p class="name">${e.title}</p>
+    <p class="name">${e?.title}</p>
     <p>
-      <span class="price">₹${e.price * 8}</span>
+      <span class="price">₹${e?.price * 8}</span>
       <span class="price-c">overwords</span>
     </p>
     <p class="delivery">Free Delivery</p>
-    <button>Add To Cart</button>
+    <button onclick="addToCart(${e.id})">Add To Cart</button>
   </div>
   </div>
   `;
@@ -55,3 +82,5 @@ const api = async () => {
   }
 };
 api();
+
+}
