@@ -28,6 +28,7 @@ function displayBagItems() {
     });
     containerElement.innerHTML = innerHTML;
   }
+
   
   function generateItemHTML(item) {
     return `<div class="bag-item-container">
@@ -51,11 +52,21 @@ function displayBagItems() {
         </div>
       </div>
   
-      <div class="remove-from-cart"">X</div>
+      <div class="remove-from-cart" onclick="removeFromBag(${item.id})">X</div>
     </div>`;
   }
   displayBagItems();
+  
   }
  
   api()
+}
+function removeFromBag(itemId) {
+  bagItems = bagItems.filter(bagItemId => bagItemId != itemId);
+  localStorage.setItem('bagItems', JSON.stringify(bagItems));
+  loadBagItemObjects();
+  bagIcon()
+  // displayBagItems();
+  load()
+  // displayBagSummary();
 }
