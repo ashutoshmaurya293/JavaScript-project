@@ -1,38 +1,6 @@
 let bagItemObjects;
 let containerElement = document.querySelector(".bag-items-container");
-displayBagSummary();
-function displayBagSummary() {
-  let bagSummaryElement = document.querySelector(".bag-summary");
-  let totalItem = bagItems.length;
-  let totalMRP = 0;
-  let totalDiscount = 0;
 
-  bagSummaryElement.innerHTML = `
-    <div class="bag-details-container">
-    <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
-    <div class="price-item">
-      <span class="price-item-tag">Total MRP</span>
-      <span class="price-item-value">₹${totalMRP}</span>
-    </div>
-    <div class="price-item">
-      <span class="price-item-tag">Discount on MRP</span>
-      <span class="price-item-value priceDetail-base-discount">-₹${totalDiscount}</span>
-    </div>
-    <div class="price-item">
-      <span class="price-item-tag">Convenience Fee</span>
-      <span class="price-item-value">₹99</span>
-    </div>
-    <hr>
-    <div class="price-footer">
-      <span class="price-item-tag">Total Amount</span>
-      <span class="price-item-value">₹{finalPayment}</span>
-    </div>
-  </div>
-  <button class="btn-place-order">
-    <div class="css-xjhrni">PLACE ORDER</div>
-  </button>
-  `;
-}
 function loadBagItemObjects() {
   // console.log(bagItems);
   const api = async () => {
@@ -46,11 +14,53 @@ function loadBagItemObjects() {
         }
       }
     });
+    displayBagSummary();
+function displayBagSummary() {
+  let bagSummaryElement = document.querySelector(".bag-summary");
+  let totalItem = bagItems.length;
+  let Convenience = 0
+  if(totalItem>0){
+Convenience = 99
+  }
+  let totalMRP = 0;
+  let totalDiscount = 0;
+  bagItemObjects.forEach(bagItem => {
+    totalMRP += bagItem.price;
+    totalDiscount += bagItem.price - bagItem.price;
+  });
+
+  let finalPayment = totalMRP - totalDiscount + Convenience;
+  bagSummaryElement.innerHTML = `
+    <div class="bag-details-container">
+    <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
+    <div class="price-item">
+      <span class="price-item-tag">Total MRP</span>
+      <span class="price-item-value">₹${totalMRP}</span>
+    </div>
+    <div class="price-item">
+      <span class="price-item-tag">Discount on MRP</span>
+      <span class="price-item-value priceDetail-base-discount">-₹${totalDiscount}</span>
+    </div>
+    <div class="price-item">
+      <span class="price-item-tag">Convenience Fee</span>
+      <span class="price-item-value">₹${Convenience}</span>
+    </div>
+    <hr>
+    <div class="price-footer">
+      <span class="price-item-tag">Total Amount</span>
+      <span class="price-item-value">₹${finalPayment}</span>
+    </div>
+  </div>
+  <button class="btn-place-order">
+    <div class="css-xjhrni">PLACE ORDER</div>
+  </button>
+  `;
+}
 
     function displayBagItems() {
       let containerElement = document.querySelector(".bag-items-container");
       let innerHTML = "";
-      console.log(bagItemObjects);
+      // console.log(bagItemObjects);
       bagItemObjects.forEach((bagItem) => {
         innerHTML += generateItemHTML(bagItem);
       });
