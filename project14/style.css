@@ -225,7 +225,7 @@ input {
   margin: 1rem 1rem;
 }
 .name {
-  width: 240px;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
