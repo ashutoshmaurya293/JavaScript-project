@@ -76,7 +76,7 @@
   margin-bottom: 8px;
   background: #fff;
   font-size: 14px;
-  border: 1px solid #eaeaec;
+  border: 3px solid #a0a0e167;
   border-radius: 4px;
   position: relative;
   padding: 12px 12px 0;
@@ -116,7 +116,7 @@
   margin-top: 5px;
   color: #282c3f;
   font-size: 12px;
-  letter-spacing: -.1px;
+  letter-spacing: -0.1px;
   margin-bottom: 8px;
   line-height: 15px;
 }
@@ -134,9 +134,40 @@
   height: 14px;
   cursor: pointer;
 }
+.item-name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media (max-width: 768px) {
-  input{
+  input {
     display: none;
+  }
+  .bag-page {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    width: 100%;
+  }
+  .bag-page {
+    width: 99%;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bag-items-container {
+    width: 100%;
+  }
+  .bag-summary {
+    width: 95%;
+    padding: 0;
+    margin: 0 10px 20px;
+  }
+  .item-name{
+ width: 90%;
   }
 }

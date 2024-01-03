@@ -1,26 +1,22 @@
 let bagItemObjects;
-let containerElement = document.querySelector('.bag-items-container');
-onLoad();
-
-function onLoad() {
-  loadBagItemObjects();
-  displayBagSummary()
-   
-}
+let containerElement = document.querySelector(".bag-items-container");
+displayBagSummary();
 function displayBagSummary() {
-  let bagSummaryElement = document.querySelector('.bag-summary');
-
+  let bagSummaryElement = document.querySelector(".bag-summary");
+  let totalItem = bagItems.length;
+  let totalMRP = 0;
+  let totalDiscount = 0;
 
   bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
-    <div class="price-header">PRICE DETAILS ({totalItem} Items) </div>
+    <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
     <div class="price-item">
       <span class="price-item-tag">Total MRP</span>
-      <span class="price-item-value">₹{totalMRP}</span>
+      <span class="price-item-value">₹${totalMRP}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Discount on MRP</span>
-      <span class="price-item-value priceDetail-base-discount">-₹{totalDiscount}</span>
+      <span class="price-item-value priceDetail-base-discount">-₹${totalDiscount}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Convenience Fee</span>
@@ -37,32 +33,32 @@ function displayBagSummary() {
   </button>
   `;
 }
-function loadBagItemObjects(){
-//   console.log(bagItems);
+function loadBagItemObjects() {
+  // console.log(bagItems);
   const api = async () => {
     const url = "https://fakestoreapi.com/products";
-      const result = await fetch(url).then((res) => res.json());
+    const result = await fetch(url).then((res) => res.json());
     //   console.log(result);
-      let bagItemObjects = bagItems.map((bid)=>{
-        for(let i = 0; i<result.length; i++){
-            if(bid === result[i].id){
-                return result[i]
-            }
+    let bagItemObjects = bagItems.map((bid) => {
+      for (let i = 0; i < result.length; i++) {
+        if (bid === result[i].id) {
+          return result[i];
         }
-      })
-  
-function displayBagItems() {
-    let containerElement = document.querySelector('.bag-items-container');
-    let innerHTML = '';
-    bagItemObjects.forEach(bagItem => {
-      innerHTML += generateItemHTML(bagItem);
+      }
     });
-    containerElement.innerHTML = innerHTML;
-  }
 
-  
-  function generateItemHTML(item) {
-    return `<div class="bag-item-container">
+    function displayBagItems() {
+      let containerElement = document.querySelector(".bag-items-container");
+      let innerHTML = "";
+      console.log(bagItemObjects);
+      bagItemObjects.forEach((bagItem) => {
+        innerHTML += generateItemHTML(bagItem);
+      });
+      containerElement.innerHTML = innerHTML;
+    }
+
+    function generateItemHTML(item) {
+      return `<div class="bag-item-container">
       <div class="item-left-part">
         <img class="bag-item-img" src="${item?.image}">
       </div>
@@ -85,18 +81,16 @@ function displayBagItems() {
   
       <div class="remove-from-cart" onclick="removeFromBag(${item.id})">X</div>
     </div>`;
-  }
-  displayBagItems();
-  
-  }
- 
-  api()
+    }
+    displayBagItems();
+  };
+  api();
 }
+loadBagItemObjects();
 function removeFromBag(itemId) {
-  bagItems = bagItems.filter(bagItemId => bagItemId != itemId);
-  localStorage.setItem('bagItems', JSON.stringify(bagItems));
+  bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
+  localStorage.setItem("bagItems", JSON.stringify(bagItems));
   loadBagItemObjects();
-  bagIcon()
-  load()
-
+  bagIcon();
+  displayBagSummary();
 }
