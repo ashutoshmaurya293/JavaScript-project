@@ -200,6 +200,7 @@ input {
   width: 88%;
   /* background-color: yellow;   */
   margin: 1rem auto;
+
 }
 .cart {
   height: 400px;
@@ -385,4 +386,29 @@ input {
     font-size: 12px;
     line-height: 20px;
   }
+}
+#loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100% ;
+  background-color: rgba(0, 0, 0, 0.306);
+bottom: 1px;
+left: 1px;
+/* display: none; */
+}
+.spinner {
+  border: 8px solid #3498db;
+  border-top: 8px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

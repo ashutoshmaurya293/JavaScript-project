@@ -47,12 +47,13 @@ function addToCart(id){
 }
 
 function loadHomnePage(){
+const hellow = document.getElementById("loader")
 const api = async () => {
   const url = "https://fakestoreapi.com/products";
   try {
     const result = await fetch(url).then((res) => res.json());
-    // console.log(result);
     const fullCart = document.querySelector(".fullCart");
+    hellow.style.display="none"
     if(!fullCart)return
     let innerHTML = "";
     result.forEach((e) => {
