@@ -4,11 +4,11 @@ let containerElement = document.querySelector(".bag-items-container");
 function loadBagItemObjects() {
   // console.log(bagItems);
   const api = async () => {
-    const hellow = document.getElementById("loader")
-    hellow.style.display="block"
+    const loader = document.getElementById("loadingDiv")
+    loader.style.display="block"
     const url = "https://fakestoreapi.com/products";
     const result = await fetch(url).then((res) => res.json());
-    hellow.style.display="none"
+    loader.style.display="none"
 
     //   console.log(result);
     let bagItemObjects = bagItems.map((bid) => {
