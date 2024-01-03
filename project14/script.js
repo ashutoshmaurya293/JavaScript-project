@@ -67,7 +67,7 @@ const api = async () => {
   <div class="element">
     <p class="name">${e?.title}</p>
     <p>
-      <span class="price">₹${e?.price * 8}</span>
+      <span class="price">₹${Math.floor(e?.price * 8)}</span>
       <span class="price-c">overwords</span>
     </p>
     <p class="delivery">Free Delivery</p>

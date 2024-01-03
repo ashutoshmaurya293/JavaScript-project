@@ -25,8 +25,8 @@ Convenience = 99
   let totalMRP = 0;
   let totalDiscount = 0;
   bagItemObjects.forEach(bagItem => {
-    totalMRP += bagItem.price;
-    totalDiscount += bagItem.price - bagItem.price;
+    totalMRP += bagItem.price*8;
+    totalDiscount += totalMRP*10/100;
   });
 
   let finalPayment = totalMRP - totalDiscount + Convenience;
@@ -35,11 +35,11 @@ Convenience = 99
     <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
     <div class="price-item">
       <span class="price-item-tag">Total MRP</span>
-      <span class="price-item-value">₹${totalMRP}</span>
+      <span class="price-item-value">₹${Math.floor(totalMRP)}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Discount on MRP</span>
-      <span class="price-item-value priceDetail-base-discount">-₹${totalDiscount}</span>
+      <span class="price-item-value priceDetail-base-discount">-₹${Math.floor(totalDiscount)}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Convenience Fee</span>
@@ -48,7 +48,7 @@ Convenience = 99
     <hr>
     <div class="price-footer">
       <span class="price-item-tag">Total Amount</span>
-      <span class="price-item-value">₹${finalPayment}</span>
+      <span class="price-item-value">₹${Math.floor(finalPayment)}</span>
     </div>
   </div>
   <button class="btn-place-order">
@@ -59,6 +59,7 @@ Convenience = 99
 
     function displayBagItems() {
       let containerElement = document.querySelector(".bag-items-container");
+
       let innerHTML = "";
       // console.log(bagItemObjects);
       bagItemObjects.forEach((bagItem) => {
@@ -68,6 +69,8 @@ Convenience = 99
     }
 
     function generateItemHTML(item) {
+      const today = new Date();
+      const date =today.getDate()+7+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
       return `<div class="bag-item-container">
       <div class="item-left-part">
         <img class="bag-item-img" src="${item?.image}">
@@ -76,20 +79,23 @@ Convenience = 99
         <div class="company"></div>
         <div class="item-name">${item?.title}</div>
         <div class="price-container">
-          <span class="current-price">Rs ${item?.price}</span>
-          <span class="original-price">Rs ${item?.price}</span>
-          <span class="discount-percentage">(% OFF)</span>
+
+          <span class="original-price"><b>₹</b>${Math.floor(item?.price*8)}</span>
+          <span class="discount-percentage">(7% OFF)</span>
         </div>
         <div class="return-period">
-          <span class="return-period-days">days</span> return available
+          <span class="return-period-days">7 days</span> return available
         </div>
         <div class="delivery-details">
           Delivery by
-          <span class="delivery-details-days"></span>
+          <span class="delivery-details-days">${date}</span>
         </div>
       </div>
   
-      <div class="remove-from-cart" onclick="removeFromBag(${item.id})">X</div>
+      <div class="remove-from-cart" onclick="removeFromBag(${item.id})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+    </div>
     </div>`;
     }
     displayBagItems();
