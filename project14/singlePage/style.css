@@ -1,0 +1,13 @@
+main{
+    display: flex;
+    /* justify-content: center; */
+}
+.singleImage{
+    height: 60vh;
+    width: 50%;
+}
+.singleImage img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain; 
+}
