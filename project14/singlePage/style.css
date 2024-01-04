@@ -1,13 +1,43 @@
-main{
-    display: flex;
-    /* justify-content: center; */
+main {
+  height: 100vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 3rem auto;
+  gap: 3rem;
 }
-.singleImage{
-    height: 60vh;
-    width: 50%;
+.singleImage {
+  height: 65vh;
+  width: 50%;
+  display: flex;
+  /* justify-content: end; */
+align-items: end;
+  flex-direction: column;
 }
-.singleImage img{
-    height: 100%;
-    width: 100%;
-    object-fit: contain; 
+#image {
+  height: 100%;
+  width: 70%;
+  border: 2px solid rgba(0, 0, 0, 0.274);
+  display: flex;
+  align-items: end;
+}
+.singleImage img {
+  height: 80%;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+.singleConetnt {
+  height: 60vh;
+  width: 50%;
+  background-color: red;
+}
+.buttons{
+    margin-top: 1rem;
+}
+button{
+    margin: 0.6rem;
+    width: 220px;
+    height: 50px
 }
