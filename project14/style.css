@@ -391,13 +391,12 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  height: 100vh;
-  width: 100% ;
-  background-color: rgba(0, 0, 0, 0.164);
-bottom: 1px;
-left: 1px;
-/* display: none; */
+  /* position: absolute; */
+  margin: 0 auto;
+  height: 50vh;
+  width: 88% ;
+  background-color: #00000005;
+
 }
 .spinner {
   border: 6px solid #3498db;

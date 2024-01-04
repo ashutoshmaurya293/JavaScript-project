@@ -182,18 +182,22 @@
   .item-name{
  width: 90%;
   }
+  .spinnerCart {
+    border: 4px solid #3498db;
+    border-top: 8px solid transparent;
+margin-bottom: 25rem;
+  }
 }
 #loaderCart{
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   height: 100vh;
   width: 100% ;
-  background-color: rgba(0, 0, 0, 0.164);
-bottom: 1px;
-left: 1px;
-/* display: none; */
+  background-color: rgba(0, 0, 0, 0.064);
+/* bottom: 1px; */
+/* left: 1px; */
 }
 .spinnerCart {
   border: 6px solid #3498db;
