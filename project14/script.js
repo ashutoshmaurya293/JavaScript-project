@@ -20,13 +20,16 @@ function change() {
 }
 icon.addEventListener("click", change);
 backdrop.addEventListener("click", change);
-let bagItems
+let bagItems;
+let singleItem;
 let bagLength = document.querySelector(".bagLength")
 let bagLengthMobile = document.querySelector(".bagLengthMobile")
 load()
 function load(){
   let bagItemStr = localStorage.getItem("bagItems")
   bagItems = bagItemStr ? JSON.parse(bagItemStr):[]
+  let singleItemStr = localStorage.getItem("singleItem")
+  singleItem = singleItemStr ? JSON.parse(singleItemStr):[]
   loadHomnePage()
   bagIcon()
 
@@ -45,6 +48,11 @@ function addToCart(id){
   bagIcon()
 
 }
+function raja(id){
+  singleItem = id
+  localStorage.setItem("singleItem",JSON.stringify(singleItem))
+
+}
 
 function loadHomnePage(){
 const loader = document.getElementById("loader")
@@ -58,12 +66,15 @@ const api = async () => {
     let innerHTML = "";
     result.forEach((e) => {
       innerHTML += `
+     
   <div class="cart">
-  <div class="cartImg">
+  <a href="./singlePage/index.html">
+  <div class="cartImg" onclick="raja(${e.id})">
     <img
       src=${e?.image}
       alt=""
     />
+    </a>
   </div>
   <div class="element">
     <p class="name">${e?.title}</p>
@@ -75,6 +86,7 @@ const api = async () => {
     <button onclick="addToCart(${e.id})">Add To Cart</button>
   </div>
   </div>
+
   `;
     });
     fullCart.innerHTML = innerHTML;
