@@ -2,9 +2,13 @@ console.log(singleItem);
 let main = document.getElementById("main");
 
 const api = async () => {
+  const loader = document.getElementById("loadingDiv")
+
   const url = `https://fakestoreapi.com/products/${singleItem}`;
   const result = await fetch(url).then((res) => res.json());
   console.log(result);
+  loader.style.display="none"
+
   if (!main) return;
   main.innerHTML = ` <div class="singleImage">
 <div id="image">
@@ -23,7 +27,7 @@ const api = async () => {
   <p class="title">
   ${result.title}
   </p>
-  <p class="price">₹${result.price}</p>
+  <p class="price">₹${Math.floor(result.price*8)}</p>
   <p class="rating">
     ${result.rating.rate}
     <svg
