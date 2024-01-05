@@ -29,9 +29,23 @@ align-items: end;
   margin-bottom: 1rem;
 }
 .singleConetnt {
-  height: 60vh;
+  height: 100vh;
   width: 50%;
-  background-color: red;
+  /* background-color: red; */
+}
+.singleConetnt .top{
+height: 50%;
+padding: 1rem;
+width: 90%;
+  background-color: #fff;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(0, 0, 0, 0.274);
+}
+.singleConetnt .down{
+  width: 90%;
+  height: 50%;
+  background-color: green;
+  border: 2px solid rgba(0, 0, 0, 0.274);
 }
 .buttons{
     margin-top: 1rem;
@@ -40,4 +54,49 @@ button{
     margin: 0.6rem;
     width: 220px;
     height: 50px
+}
+.top .title{
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #000000c1;
+  /* color: #8b8ba3; */
+  background-color: #fff;
+  margin: 0.5rem 0.5rem;  
+}
+.top .price{
+  font-size: 32px;
+  line-height: 40px;
+  padding: 1rem 0.5rem;
+  /* margin: 2px; */
+  letter-spacing: 0.5px;
+  color: #000000c1;
+    background-color: #fff;
+}
+.rating{
+  display: flex;
+  align-items: center;
+}
+.ratingContent{
+font-size: 14px ;
+line-height: 16px;
+letter-spacing: 0.5px;
+color: #000000c1;
+padding: 0.5rem;
+}
+.delivery{
+  font-size: 14px ;
+line-height: 16px;
+letter-spacing: 0.5px;
+color: #000000c1;
+padding: 1.5rem;
+}
+.rating svg{
+  height: 18px;
+margin: 4px;
+}
+@media (max-width: 768px) {
+  input {
+    display: none;
+  }
 }
