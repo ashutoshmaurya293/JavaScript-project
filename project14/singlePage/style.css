@@ -29,7 +29,7 @@ align-items: end;
   margin-bottom: 1rem;
 }
 .singleConetnt {
-  height: 100vh;
+  height: 90vh;
   width: 50%;
   /* background-color: red; */
 }
@@ -44,7 +44,7 @@ width: 90%;
 .singleConetnt .down{
   width: 90%;
   height: 50%;
-  background-color: green;
+  /* background-color: green; */
   border: 2px solid rgba(0, 0, 0, 0.274);
 }
 .buttons{
@@ -94,6 +94,42 @@ padding: 1.5rem;
 .rating svg{
   height: 18px;
 margin: 4px;
+}
+.description{
+  margin: 2rem 1rem;
+}
+.descriptionHeading{
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px;
+  color: #000000e6;
+}
+.descriptionContent{
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #000000c1;
+  /* color: #8b8ba3; */
+  padding: 2px;
+  background-color: #fff;
+}
+.category{
+  margin: 2rem 1rem;
+}
+.categoryHeading{
+  font-size: 20px;
+  font-weight: 550;
+  padding: 5px;
+  color: #000000e6;
+}
+.categoryContent{
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #000000c1;
+  /* color: #8b8ba3; */
+  padding: 2px;
+  background-color: #fff;
 }
 @media (max-width: 768px) {
   input {
