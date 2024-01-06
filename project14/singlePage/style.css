@@ -3,7 +3,6 @@ main {
   width: 90%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   margin: 3rem auto;
   gap: 3rem;
 }
@@ -12,7 +11,7 @@ main {
   width: 50%;
   display: flex;
   /* justify-content: end; */
-align-items: end;
+  align-items: end;
   flex-direction: column;
 }
 #image {
@@ -31,100 +30,97 @@ align-items: end;
 .singleConetnt {
   height: 90vh;
   width: 50%;
-  /* background-color: red; */
 }
-.singleConetnt .top{
-height: 50%;
-padding: 1rem;
-width: 90%;
+.singleConetnt .top {
+  min-height: 40%;
+  padding: 1rem;
+  width: 90%;
   background-color: #fff;
   margin-bottom: 2rem;
   border: 2px solid rgba(0, 0, 0, 0.274);
 }
-.singleConetnt .down{
+.singleConetnt .down {
   width: 90%;
   height: 50%;
-  /* background-color: green; */
   border: 2px solid rgba(0, 0, 0, 0.274);
 }
-.buttons{
-    margin-top: 1rem;
+.buttons {
+  margin-top: 1rem;
 }
-button i{
+button i {
   padding: 0 5px;
   font-size: 17px;
 }
-button{
+button {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
-    margin: 0.6rem;
-    width: 223px;
-    height: 55px
+  margin: 0.6rem;
+  width: 223px;
+  height: 55px;
 }
-.buyNowButton{
+.buyNowButton {
   background-color: #9f2089;
   color: #fff;
   border: 1px solid #fff;
-
 }
-.addCartButton{
+.addCartButton {
   border: 2px solid #9f2089;
   background-color: #fff;
 }
-.addCartp{
+.addCartp {
   color: #9f2089;
 }
-.top .title{
+.top .title {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
   color: #000000c1;
   /* color: #8b8ba3; */
   background-color: #fff;
-  margin: 0.5rem 0.5rem;  
+  margin: 0.5rem 0.5rem;
 }
-.top .price{
+.top .price {
   font-size: 32px;
   line-height: 40px;
   padding: 1rem 0.5rem;
   /* margin: 2px; */
   letter-spacing: 0.5px;
   color: #000000c1;
-    background-color: #fff;
+  background-color: #fff;
 }
-.rating{
+.rating {
   display: flex;
   align-items: center;
 }
-.ratingContent{
-font-size: 14px ;
-line-height: 16px;
-letter-spacing: 0.5px;
-color: #000000c1;
-padding: 0.5rem;
+.ratingContent {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: #000000c1;
+  padding: 0.5rem;
 }
-.delivery{
-  font-size: 14px ;
-line-height: 16px;
-letter-spacing: 0.5px;
-color: #000000c1;
-padding: 1.5rem;
+.delivery {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: #000000c1;
+  padding: 1.5rem;
 }
-.rating svg{
+.rating svg {
   height: 18px;
-margin: 4px;
+  margin: 4px;
 }
-.description{
+.description {
   margin: 2rem 1rem;
 }
-.descriptionHeading{
+.descriptionHeading {
   font-size: 20px;
   font-weight: 600;
   padding: 5px;
   color: #000000e6;
 }
-.descriptionContent{
+.descriptionContent {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
@@ -133,16 +129,16 @@ margin: 4px;
   padding: 2px;
   background-color: #fff;
 }
-.category{
+.category {
   margin: 2rem 1rem;
 }
-.categoryHeading{
+.categoryHeading {
   font-size: 20px;
   font-weight: 550;
   padding: 5px;
   color: #000000e6;
 }
-.categoryContent{
+.categoryContent {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
@@ -154,5 +150,82 @@ margin: 4px;
 @media (max-width: 768px) {
   input {
     display: none;
+  }
+  main {
+    height: 100vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+    gap: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .singleImage {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: end; */
+    align-items: center;
+    flex-direction: column;
+  }
+  #image {
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.274);
+    border-radius: 5px;
+  }
+  .singleImage img {
+    height: 95%;
+    width: 88%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .singleConetnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    height: 150vw;
+    width: 100%;
+  }
+  .singleConetnt .top {
+    margin-top: 5rem;
+    min-height: 40%;
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.274);
+    border-radius: 5px;
+  }
+  .singleConetnt .down {
+    width: 100%;
+    height: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.274);
+    border-radius: 5px;
+  }
+  .buttons {
+    height: 5vh;
+    margin-top: 1rem;
+    display: flex;
+  }
+  button i {
+    padding: 0 5px;
+    font-size: 17px;
+  }
+  button {
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    margin: 0.6rem;
+    width: 180px;
+    height: 35px;
   }
 }
