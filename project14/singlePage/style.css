@@ -286,7 +286,7 @@ button {
     margin: 4px;
   }
   .description {
-    margin: 2rem 1rem;
+    margin: 2rem 0;
   }
   .descriptionHeading {
     font-size: 20px;
@@ -304,7 +304,7 @@ button {
     background-color: #fff;
   }
   .category {
-    margin: 0;
+    margin: 1rem 0;
   }
   .categoryHeading {
     font-size: 20px;
