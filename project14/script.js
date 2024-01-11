@@ -48,7 +48,7 @@ function addToCart(id){
   bagIcon()
 
 }
-function raja(id){
+function singleCart(id){
   singleItem = id
   localStorage.setItem("singleItem",JSON.stringify(singleItem))
 
@@ -69,7 +69,7 @@ const api = async () => {
      
   <div class="cart">
   <a href="./singlePage/index.html">
-  <div class="cartImg" onclick="raja(${e.id})">
+  <div class="cartImg" onclick="singleCart(${e.id})">
     <img
       src=${e?.image}
       alt=""
