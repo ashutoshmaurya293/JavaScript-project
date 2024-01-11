@@ -1,4 +1,4 @@
-console.log(singleItem);
+// console.log(singleItem);
 let main = document.getElementById("main");
 
 const api = async () => {
@@ -6,8 +6,11 @@ const api = async () => {
 
   const url = `https://fakestoreapi.com/products/${singleItem}`;
   const result = await fetch(url).then((res) => res.json());
-  console.log(result);
-  loader.style.display="none"
+  // console.log(result);
+  if(!loader)return
+  else{
+    loader.style.display="none"
+  }
 
   if (!main) return;
   main.innerHTML = ` <div class="singleImage">

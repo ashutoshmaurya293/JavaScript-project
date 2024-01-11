@@ -2,13 +2,13 @@ let bagItemObjects;
 let containerElement = document.querySelector(".bag-items-container");
 
 function loadBagItemObjects() {
-  console.log(bagItems);
+  // console.log(bagItems);
   const api = async () => {
-    const loader = document.getElementById("loadingDiv")
-    loader.style.display="block"
+    const loader = document.getElementById("loadingDiv");
+    loader.style.display = "block";
     const url = "https://fakestoreapi.com/products";
     const result = await fetch(url).then((res) => res.json());
-    loader.style.display="none"
+    loader.style.display = "none";
 
     //   console.log(result);
     let bagItemObjects = bagItems.map((bid) => {
@@ -19,22 +19,22 @@ function loadBagItemObjects() {
       }
     });
     displayBagSummary();
-function displayBagSummary() {
-  let bagSummaryElement = document.querySelector(".bag-summary");
-  let totalItem = bagItems.length;
-  let Convenience = 0
-  if(totalItem>0){
-Convenience = 99
-  }
-  let totalMRP = 0;
-  let totalDiscount = 0;
-  bagItemObjects.forEach(bagItem => {
-    totalMRP += bagItem.price*8;
-    totalDiscount += totalMRP*10/100;
-  });
+    function displayBagSummary() {
+      let bagSummaryElement = document.querySelector(".bag-summary");
+      let totalItem = bagItems.length;
+      let Convenience = 0;
+      if (totalItem > 0) {
+        Convenience = 99;
+      }
+      let totalMRP = 0;
+      let totalDiscount = 0;
+      bagItemObjects.forEach((bagItem) => {
+        totalMRP += bagItem.price * 8;
+        totalDiscount += (totalMRP * 10) / 100;
+      });
 
-  let finalPayment = totalMRP - totalDiscount + Convenience;
-  bagSummaryElement.innerHTML = `
+      let finalPayment = totalMRP - totalDiscount + Convenience;
+      bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
     <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
     <div class="price-item">
@@ -43,7 +43,9 @@ Convenience = 99
     </div>
     <div class="price-item">
       <span class="price-item-tag">Discount on MRP</span>
-      <span class="price-item-value priceDetail-base-discount">-₹${Math.floor(totalDiscount)}</span>
+      <span class="price-item-value priceDetail-base-discount">-₹${Math.floor(
+        totalDiscount
+      )}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Convenience Fee</span>
@@ -59,7 +61,7 @@ Convenience = 99
     <div class="css-xjhrni">PLACE ORDER</div>
   </button>
   `;
-}
+    }
 
     function displayBagItems() {
       let containerElement = document.querySelector(".bag-items-container");
@@ -73,8 +75,15 @@ Convenience = 99
     }
 
     function generateItemHTML(item) {
+      const qty = 1
       const today = new Date();
-      const date =today.getDate()+7+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+      const date =
+        today.getDate() +
+        7 +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getFullYear();
       return `<div class="bag-item-container">
       <div class="item-left-part">
         <img class="bag-item-img" src="${item?.image}">
@@ -84,7 +93,9 @@ Convenience = 99
         <div class="item-name">${item?.title}</div>
         <div class="price-container">
 
-          <span class="original-price"><b>₹</b>${Math.floor(item?.price*8)}</span>
+          <span class="original-price"><b>₹</b>${Math.floor(
+            item?.price * 8
+          )}</span>
           <span class="discount-percentage">(7% OFF)</span>
         </div>
         <div class="return-period">
@@ -94,9 +105,14 @@ Convenience = 99
           Delivery by
           <span class="delivery-details-days">${date}</span>
         </div>
+        <div >
+       <button>+</button><span>${qty}</span><button>+</button>
+        </div>
       </div>
   
-      <div class="remove-from-cart" onclick="removeFromBag(${item.id})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <div class="remove-from-cart" onclick="removeFromBag(${
+        item.id
+      })"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
     </svg>
     </div>
