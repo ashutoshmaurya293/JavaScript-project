@@ -69,7 +69,10 @@ function loadBagItemObjects() {
       let innerHTML = "";
       // console.log(bagItemObjects);
       bagItemObjects.forEach((bagItem) => {
-        innerHTML += generateItemHTML(bagItem);
+        if(!bagItem?.title)return
+        else{
+          innerHTML += generateItemHTML(bagItem);
+        }
       });
       containerElement.innerHTML = innerHTML;
     }
