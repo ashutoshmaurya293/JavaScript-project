@@ -5,7 +5,7 @@ function loadBagItemObjects() {
   // console.log(bagItems);
   const api = async () => {
     const loader = document.getElementById("loadingDiv");
-    if(!loader)return
+    if (!loader) return;
     loader.style.display = "block";
     const url = "https://fakestoreapi.com/products";
     const result = await fetch(url).then((res) => res.json());
@@ -33,7 +33,7 @@ function loadBagItemObjects() {
         totalMRP += bagItem?.price * 8;
         totalDiscount += (totalMRP * 10) / 100;
       });
-      let mrp = Math.floor(totalMRP)
+      let mrp = Math.floor(totalMRP);
       let finalPayment = totalMRP - totalDiscount + Convenience;
       bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
@@ -70,8 +70,8 @@ function loadBagItemObjects() {
       let innerHTML = "";
       // console.log(bagItemObjects);
       bagItemObjects.forEach((bagItem) => {
-        if(!bagItem?.title)return
-        else{
+        if (!bagItem?.title) return;
+        else {
           innerHTML += generateItemHTML(bagItem);
         }
       });
@@ -89,7 +89,9 @@ function loadBagItemObjects() {
         today.getFullYear();
       return `<div class="bag-item-container">
       <div class="item-left-part">
-        <img class="bag-item-img" src="${item?.image}">
+      <a href="../singlePage/index.html"><img class="bag-item-img" src="${
+        item?.image
+      }" onclick="singleCart(${item.id})"></a>
       </div>
       <div class="item-right-part">
         <div class="company"></div>

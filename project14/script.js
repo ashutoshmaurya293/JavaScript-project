@@ -42,8 +42,8 @@ function bagIcon(){
 }
 
 function addToCart(id){
-  if(bagItems.includes(id)){
-  }else{
+  if(bagItems.includes(id))return
+  else{
   bagItems.push(id)
   }
   localStorage.setItem("bagItems",JSON.stringify(bagItems))

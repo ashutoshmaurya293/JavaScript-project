@@ -58,6 +58,12 @@ button {
   margin: 0.6rem;
   width: 223px;
   height: 55px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  &:active{
+    scale: 1.1;
+    transition: all ease 0.5s;
+  }
 }
 .buyNowButton {
   background-color: #9f2089;

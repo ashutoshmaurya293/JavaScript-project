@@ -21,7 +21,7 @@ const api = async () => {
   />
 </div>
 <div class="buttons">
-  <button class="addCartButton"> <i class="fa-solid fa-cart-shopping"></i><span class="addCartp"> Add to Cart</span></button>
+  <button class="addCartButton" onclick = "addToCart(${result.id})"><i class="fa-solid fa-cart-shopping"></i><span class="addCartp"> Add to Cart</span></button>
   <button class="buyNowButton">Buy Now</button>
 </div>
 </div>
