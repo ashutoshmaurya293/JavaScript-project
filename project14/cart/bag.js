@@ -5,6 +5,7 @@ function loadBagItemObjects() {
   // console.log(bagItems);
   const api = async () => {
     const loader = document.getElementById("loadingDiv");
+    if(!loader)return
     loader.style.display = "block";
     const url = "https://fakestoreapi.com/products";
     const result = await fetch(url).then((res) => res.json());
@@ -32,14 +33,14 @@ function loadBagItemObjects() {
         totalMRP += bagItem?.price * 8;
         totalDiscount += (totalMRP * 10) / 100;
       });
-
+      let mrp = Math.floor(totalMRP)
       let finalPayment = totalMRP - totalDiscount + Convenience;
       bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
     <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
     <div class="price-item">
       <span class="price-item-tag">Total MRP</span>
-      <span class="price-item-value">₹${Math.floor(totalMRP)}</span>
+      <span class="price-item-value">₹${mrp}</span>
     </div>
     <div class="price-item">
       <span class="price-item-tag">Discount on MRP</span>
@@ -78,7 +79,6 @@ function loadBagItemObjects() {
     }
 
     function generateItemHTML(item) {
-      const qty = 1
       const today = new Date();
       const date =
         today.getDate() +
@@ -109,7 +109,6 @@ function loadBagItemObjects() {
           <span class="delivery-details-days">${date}</span>
         </div>
         <div >
-       <button>+</button><span>${qty}</span><button>+</button>
         </div>
       </div>
   
@@ -126,6 +125,7 @@ function loadBagItemObjects() {
   api();
 }
 loadBagItemObjects();
+
 function removeFromBag(itemId) {
   bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
   localStorage.setItem("bagItems", JSON.stringify(bagItems));
