@@ -3,6 +3,8 @@ let searchInput = document.getElementById("searchInput");
 let button = document.getElementById("btn");
 let showData = document.getElementById("showData");
 let moreBTN = document.getElementById("moreBTN");
+let loader = document.querySelector(".loader")
+let moreloader = document.querySelector(".moreloader")
 let page = 2;
 
 const getData = async (searchInputValue, pageNo) => {
@@ -11,6 +13,9 @@ const getData = async (searchInputValue, pageNo) => {
       `https://api.unsplash.com/search/photos?query=${searchInputValue}&per_page=28&page=${pageNo}&client_id=${AccesKey}`
     );
     let jsonData = await fech.json();
+    loader.style.display = "none"
+    moreloader.style.display = "none"
+
     if (searchInput.value == "") {
       showData.innerHTML = `
       <h1>pleace search something....</h1>
@@ -20,7 +25,7 @@ const getData = async (searchInputValue, pageNo) => {
       document.querySelector(".more").style.display = "block";
     }
     jsonData.results.map((e) => {
-      // console.log(e);
+      console.log(e);
       let div = document.createElement("div");
       div.classList.add("card");
       showData.appendChild(div);
@@ -35,22 +40,14 @@ const getData = async (searchInputValue, pageNo) => {
 };
 
 function startLoading() {
-  var button = document.getElementById("btn");
-  button.classList.add("loading");
-  setTimeout(function () {
+  loader.style.display = "inline"
     showData.innerHTML = "";
     const searchInputValue = searchInput.value;
     getData(searchInputValue);
-    button.classList.remove("loading");
-  }, 1000);
 }
 
 function Loading() {
-  var button = document.getElementById("moreBtn");
-  button.classList.add("moreLoading");
-  setTimeout(() => {
+  moreloader.style.display = "inline"
     const searchInputValue = searchInput.value;
     getData(searchInputValue, page++);
-    button.classList.remove("moreLoading");
-  }, 1000);
 }
