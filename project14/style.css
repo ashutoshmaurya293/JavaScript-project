@@ -453,6 +453,7 @@ input {
 .footer-col .links li {
   list-style: none;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .footer-col .links li a {
@@ -546,5 +547,10 @@ input {
 
   .footer-col form button {
     margin: 10px 0 0 0;
+  }
+  .footer-col .links li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 10px;
   }
 }
