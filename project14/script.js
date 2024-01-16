@@ -44,12 +44,13 @@ function bagIcon(){
 function addToCart(id){
   if(bagItems.includes(id))return
   else{
-  bagItems.push(id)
-  show()
+    bagItems.push(id)
+    localStorage.setItem("bagItems",JSON.stringify(bagItems))
+    // console.log(bagItems);
+    bagIcon()
+    show()
   }
-  localStorage.setItem("bagItems",JSON.stringify(bagItems))
-  // console.log(bagItems);
-  bagIcon()
+
 
 }
 function singleCart(id){
