@@ -45,6 +45,7 @@ function addToCart(id){
   if(bagItems.includes(id))return
   else{
   bagItems.push(id)
+  show()
   }
   localStorage.setItem("bagItems",JSON.stringify(bagItems))
   // console.log(bagItems);
@@ -100,3 +101,17 @@ const api = async () => {
 api();
 
 }
+
+let tostBox = document.getElementById("tostBox");
+      function show() {
+        let toast = document.createElement("div");
+        toast.classList.add("toast");
+      
+        toast.innerHTML = `
+    <i class="fa-solid fa-circle-check"></i>
+<p>Cart Added </p>`;
+        tostBox.appendChild(toast);
+        setTimeout(()=>{
+toast.remove()
+        },3000)
+      }
