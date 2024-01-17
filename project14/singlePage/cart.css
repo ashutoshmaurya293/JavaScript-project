@@ -71,20 +71,31 @@ main {
   outline: 0;
   border: 0;
   background: none;
-  border: 1px solid #d9d9d9;
-  padding: 8px 0px;
-  margin-bottom: 30px;
-  color: #515151;
+  padding: 15px 0px;
   text-transform: uppercase;
-  width: 125px;
+  width: 145px;
   font-family: inherit;
   margin-right: 5px;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 700;
+  border-radius: 5px;
+  &:active{
+    scale: 0.9;
+  }
+}
+#addButton{
+  background-color: #ff3e6c;
+  color: #fff;
+  border: 1px solid #dd3e6c;
+}
+
+#BuyButton{
+background-color: #fff;
+color: #282c3f;
+border: 0.1px solid #282c3f;
 }
 .card .description button:hover {
-  border: 1px solid #aedaa6;
-  color: #aedaa6;
+  background-color: #ff527b;
   cursor: pointer;
 }
 .rating{

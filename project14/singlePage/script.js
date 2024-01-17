@@ -31,8 +31,8 @@ const api = async () => {
   <span class="delivery">free delivery</span>
     <h1>₹${Math.floor(result.price*8)}</h1>
     <p>${result.description}</p>
-    <button onclick = "addToCart(${result.id})">Add to Cart</button>
-    <button>Wishlist</button>
+    <button onclick = "addToCart(${result.id})" id="addButton">Add to Cart</button>
+    <button id = "BuyButton">Buy Now</button>
   </div>
 </div>`;
 };
