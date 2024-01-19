@@ -22,55 +22,50 @@ icon.addEventListener("click", change);
 backdrop.addEventListener("click", change);
 let bagItems;
 let singleItem;
-let bagLength = document.querySelector(".bagLength")
-let bagLengthMobile = document.querySelector(".bagLengthMobile")
-load()
-function load(){
-  let bagItemStr = localStorage.getItem("bagItems")
-  bagItems = bagItemStr ? JSON.parse(bagItemStr):[]
-  let singleItemStr = localStorage.getItem("singleItem")
-  singleItem = singleItemStr ? JSON.parse(singleItemStr):[]
-  loadHomnePage()
-  bagIcon()
-
+let bagLength = document.querySelector(".bagLength");
+let bagLengthMobile = document.querySelector(".bagLengthMobile");
+load();
+function load() {
+  let bagItemStr = localStorage.getItem("bagItems");
+  bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
+  let singleItemStr = localStorage.getItem("singleItem");
+  singleItem = singleItemStr ? JSON.parse(singleItemStr) : [];
+  loadHomnePage();
+  bagIcon();
 }
 
-function bagIcon(){
-  bagLength.innerHTML = bagItems.length
-  bagLengthMobile.innerHTML = bagItems.length
-
+function bagIcon() {
+  bagLength.innerHTML = bagItems.length;
+  bagLengthMobile.innerHTML = bagItems.length;
 }
 
-function addToCart(id){
-  if(bagItems.includes(id))return
-  else{
-    bagItems.push(id)
-    localStorage.setItem("bagItems",JSON.stringify(bagItems))
+function addToCart(id) {
+  if (bagItems.includes(id)) return;
+  else {
+    bagItems.push(id);
+    localStorage.setItem("bagItems", JSON.stringify(bagItems));
     // console.log(bagItems);
-    bagIcon()
-    show()
+    bagIcon();
+    show();
   }
-
-
 }
-function singleCart(id){
-  singleItem = id
-  localStorage.setItem("singleItem",JSON.stringify(singleItem))
-
+function singleCart(id) {
+  singleItem = id;
+  localStorage.setItem("singleItem", JSON.stringify(singleItem));
 }
 
-function loadHomnePage(){
-const loader = document.getElementById("loader")
-const api = async () => {
-  const url = "https://fakestoreapi.com/products";
-  try {
-    const result = await fetch(url).then((res) => res.json());
-    const fullCart = document.querySelector(".fullCart");
-    loader.style.display="none"
-    if(!fullCart)return
-    let innerHTML = "";
-    result.forEach((e) => {
-      innerHTML += `
+function loadHomnePage() {
+  const loader = document.getElementById("loader");
+  const api = async () => {
+    const url = "https://fakestoreapi.com/products";
+    try {
+      const result = await fetch(url).then((res) => res.json());
+      const fullCart = document.querySelector(".fullCart");
+      loader.style.display = "none";
+      if (!fullCart) return;
+      let innerHTML = "";
+      result.forEach((e) => {
+        innerHTML += `
      
   <div class="cart">
   <a href="./singlePage/index.html">
@@ -93,26 +88,25 @@ const api = async () => {
   </div>
 
   `;
-    });
-    fullCart.innerHTML = innerHTML;
-  } catch (error) {
-    console.log(error);
-  }
-};
-api();
-
+      });
+      fullCart.innerHTML = innerHTML;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  api();
 }
 
 let tostBox = document.getElementById("tostBox");
-      function show() {
-        let toast = document.createElement("div");
-        toast.classList.add("toast");
-      
-        toast.innerHTML = `
+function show() {
+  let toast = document.createElement("div");
+  toast.classList.add("toast");
+
+  toast.innerHTML = `
     <i class="fa-solid fa-circle-check"></i>
 <p>Cart Added </p>`;
-        tostBox.appendChild(toast);
-        setTimeout(()=>{
-toast.remove()
-        },3000)
-      }
+  tostBox.appendChild(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}

@@ -17,11 +17,8 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.3s;
-}
-.card:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card .photo {
@@ -79,26 +76,26 @@ main {
   transition: all 0.3s ease;
   font-weight: 700;
   border-radius: 5px;
-  &:active{
+  &:active {
     scale: 0.9;
   }
 }
-#addButton{
+#addButton {
   background-color: #ff3e6c;
   color: #fff;
   border: 1px solid #dd3e6c;
 }
 
-#BuyButton{
-background-color: #fff;
-color: #282c3f;
-border: 0.1px solid #282c3f;
+#BuyButton {
+  background-color: #fff;
+  color: #282c3f;
+  border: 0.1px solid #282c3f;
 }
 .card .description button:hover {
   background-color: #ff527b;
   cursor: pointer;
 }
-.rating{
+.rating {
   display: flex;
   align-items: center;
   padding: 8px 0;
@@ -106,13 +103,13 @@ border: 0.1px solid #282c3f;
   font-size: 14px;
   /* justify-content: center; */
 }
-.delivery{
+.delivery {
   display: flex;
   align-items: center;
   color: #515151;
   font-size: 14px;
 }
-.rating svg{
+.rating svg {
   height: 25px;
   padding: 0px 5px 5px 5px;
 }
