@@ -35,8 +35,8 @@ function load() {
 }
 
 function bagIcon() {
-  bagLength.innerHTML = bagItems.length;
-  bagLengthMobile.innerHTML = bagItems.length;
+  bagLength.innerHTML = bagItems.length/2;
+  bagLengthMobile.innerHTML = bagItems.length/2;
 }
 
 function addToCart(id) {

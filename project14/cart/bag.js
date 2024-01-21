@@ -2,7 +2,7 @@ let bagItemObjects;
 let containerElement = document.querySelector(".bag-items-container");
 
 function loadBagItemObjects() {
-  // console.log(bagItems);
+  console.log(bagItems);
   const api = async () => {
     const loader = document.getElementById("loadingDiv");
     if (!loader) return;
