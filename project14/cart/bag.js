@@ -79,6 +79,13 @@ function loadBagItemObjects() {
     }
 
     function generateItemHTML(item) {
+      let qty;
+      bagItems.map((e)=>{
+        if(e.id !== item.id)return
+        if(e.id == item.id){
+          qty = e.qty
+        }
+      })
       const today = new Date();
       const date =
         today.getDate() +
@@ -111,8 +118,9 @@ function loadBagItemObjects() {
           <span class="delivery-details-days">${date}</span>
         </div>
         <div >
+        <div>${qty}</div>
         </div>
-      </div>
+        </div>
   
       <div class="remove-from-cart" onclick="removeFromBag(${
         item?.id

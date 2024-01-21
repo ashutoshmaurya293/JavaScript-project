@@ -50,7 +50,7 @@ function addToCart(id) {
       // console.log(e);
       if(e.id==id){
         e.qty = e.qty + 1 
-        console.log(bagItems);
+        // console.log(bagItems);
       }
     })
     localStorage.setItem("bagItems", JSON.stringify(bagItems))
@@ -60,7 +60,7 @@ function addToCart(id) {
     bagItems.push(id);
     bagItems.push(obj);
     localStorage.setItem("bagItems", JSON.stringify(bagItems));
-    console.log(bagItems);
+    // console.log(bagItems);
     
     bagIcon();
     show();
