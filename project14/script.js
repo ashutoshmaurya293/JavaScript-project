@@ -22,6 +22,7 @@ icon.addEventListener("click", change);
 backdrop.addEventListener("click", change);
 let bagItems;
 let singleItem;
+let iconQty = 0;
 let bagLength = document.querySelector(".bagLength");
 let bagLengthMobile = document.querySelector(".bagLengthMobile");
 load();
@@ -30,13 +31,15 @@ function load() {
   bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
   let singleItemStr = localStorage.getItem("singleItem");
   singleItem = singleItemStr ? JSON.parse(singleItemStr) : [];
+  let iconStr = localStorage.getItem("iconQty");
+  iconQty = iconStr ? JSON.parse(iconStr) : [];
   loadHomnePage();
   bagIcon();
 }
 
 function bagIcon() {
-  bagLength.innerHTML = bagItems.length/2;
-  bagLengthMobile.innerHTML = bagItems.length/2;
+  bagLength.innerHTML = iconQty.length
+  bagLengthMobile.innerHTML = iconQty.length
 }
 
 function addToCart(id) {
@@ -57,6 +60,9 @@ function addToCart(id) {
     // console.log(bagItems);
   }
   else {
+    iconQty +=1
+    localStorage.setItem("iconQty", JSON.stringify(iconQty));
+    console.log(iconQty);
     bagItems.push(id);
     bagItems.push(obj);
     localStorage.setItem("bagItems", JSON.stringify(bagItems));
