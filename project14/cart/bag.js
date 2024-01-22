@@ -31,8 +31,10 @@ function loadBagItemObjects() {
       let totalMRP = 0;
       let totalDiscount = 0;
       bagItemObjects.forEach((bagItem) => {
-        totalMRP += bagItem?.price * 8;
-        totalDiscount += (totalMRP * 10) / 100;
+        if (bagItem?.price !== undefined) {
+          totalMRP += bagItem?.price * 8;
+          totalDiscount += (totalMRP * 10) / 100;
+        }
       });
       let mrp = Math.floor(totalMRP);
       let finalPayment = totalMRP - totalDiscount + Convenience;
@@ -81,12 +83,12 @@ function loadBagItemObjects() {
 
     function generateItemHTML(item) {
       let qty;
-      bagItems.map((e)=>{
-        if(e.id !== item.id)return
-        if(e.id == item.id){
-          qty = e.qty
+      bagItems.map((e) => {
+        if (e.id !== item.id) return;
+        if (e.id == item.id) {
+          qty = e.qty;
         }
-      })
+      });
       const today = new Date();
       const date =
         today.getDate() +
@@ -138,8 +140,8 @@ function loadBagItemObjects() {
 loadBagItemObjects();
 
 function removeFromBag(itemId) {
-  iconQty.pop()
-  localStorage.setItem("iconQty", JSON.stringify(iconQty))
+  iconQty.pop();
+  localStorage.setItem("iconQty", JSON.stringify(iconQty));
   bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
   localStorage.setItem("bagItems", JSON.stringify(bagItems));
   loadBagItemObjects();
