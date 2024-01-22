@@ -138,6 +138,7 @@ function loadBagItemObjects() {
 loadBagItemObjects();
 
 function removeFromBag(itemId) {
+  iconQty.pop()
   bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
   localStorage.setItem("bagItems", JSON.stringify(bagItems));
   loadBagItemObjects();

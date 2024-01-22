@@ -60,7 +60,7 @@ function addToCart(id) {
     // console.log(bagItems);
   }
   else {
-    iconQty +=1
+    iconQty.push(1)
     localStorage.setItem("iconQty", JSON.stringify(iconQty));
     console.log(iconQty);
     bagItems.push(id);
