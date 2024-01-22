@@ -139,8 +139,11 @@ loadBagItemObjects();
 
 function removeFromBag(itemId) {
   iconQty.pop()
+  localStorage.setItem("iconQty", JSON.stringify(iconQty))
   bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
   localStorage.setItem("bagItems", JSON.stringify(bagItems));
   loadBagItemObjects();
   bagIcon();
 }
+let iconQtyStr = localStorage.getItem("iconQty");
+iconQty = iconQtyStr ? JSON.parse(iconQtyStr) : [];
