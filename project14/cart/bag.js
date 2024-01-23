@@ -25,7 +25,7 @@ function loadBagItemObjects() {
       }
     });
     displayBagSummary();
-    function displayBagSummary() {
+    function displayBagSummary(price) {
       let bagSummaryElement = document.querySelector(".bag-summary");
       let totalItem = bagItems.length;
       let Convenience = 0;
@@ -34,9 +34,14 @@ function loadBagItemObjects() {
       }
       let totalMRP = 0;
       let totalDiscount = 0;
+      console.log(bagItems);
       bagItemObjects.forEach((bagItem) => {
         if (bagItem?.price !== undefined) {
-          totalMRP += bagItem?.price * 8;
+          bagItems.map((e) => {
+            if (e.id == bagItem.id) {
+              totalMRP += bagItem?.price * 8 * e.qty;
+            }
+          });
           totalDiscount += (totalMRP * 10) / 100;
         }
       });
@@ -93,7 +98,8 @@ function loadBagItemObjects() {
           qty = e.qty;
         }
       });
-      totalPrice = Math.floor(item?.price * 8 )*qty
+      totalPrice = Math.floor(item?.price * 8) * qty;
+      displayBagSummary(totalPrice);
       const today = new Date();
       const date =
         today.getDate() +
