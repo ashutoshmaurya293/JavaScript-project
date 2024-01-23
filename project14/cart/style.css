@@ -137,19 +137,42 @@
   cursor: pointer;
   border-radius: 50%;
   transition: all ease 0.8s;
-  &:hover{
+  &:hover {
     background-color: #3e415259;
   }
-  &:active{
+  &:active {
     scale: 2;
   }
 }
 
-.item-name{
+.item-name {
   width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.qtyButton {
+  font-size: 16px;
+  height: 25px;
+  padding-bottom: 1.3px;
+  background-color: #00000018;
+  border: 1px solid #00000037;
+  border-radius: 50%;
+  width: 25px;
+  cursor: pointer;
+  &:hover {
+    background-color: #00000057;
+  }
+  &:active {
+    scale: 0.9;
+  }
+}
+
+.qty {
+  /* height: 20px ; */
+  padding: 3px 9px;
+  margin: 0 3px;
+  border: 1px solid rgba(0, 0, 0, 0.515);
 }
 
 @media (max-width: 768px) {
@@ -179,16 +202,16 @@
     padding: 0;
     margin: 0 10px 20px;
   }
-  .item-name{
- width: 90%;
+  .item-name {
+    width: 90%;
   }
   .spinnerCart {
     border: 4px solid #3498db;
     border-top: 8px solid transparent;
-margin-bottom: 25rem;
+    margin-bottom: 25rem;
   }
 }
-#loaderCart{
+#loaderCart {
   position: absolute;
   z-index: 100;
   display: flex;
@@ -196,10 +219,10 @@ margin-bottom: 25rem;
   justify-content: center;
   /* position: absolute; */
   height: 100vh;
-  width: 100% ;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.064);
-/* bottom: 1px; */
-/* left: 1px; */
+  /* bottom: 1px; */
+  /* left: 1px; */
 }
 .spinnerCart {
   border: 6px solid #3498db;
@@ -211,6 +234,10 @@ margin-bottom: 25rem;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

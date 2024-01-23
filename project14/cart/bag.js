@@ -5,7 +5,7 @@ function loadBagItemObjects() {
   let iconQtyStr = localStorage.getItem("iconQty");
   iconQty = iconQtyStr ? JSON.parse(iconQtyStr) : [];
   let bagItemStr = localStorage.getItem("bagItems");
-bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
+  bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
   // console.log(bagItems);
   const api = async () => {
     const loader = document.getElementById("loadingDiv");
@@ -124,9 +124,9 @@ bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
           <span class="delivery-details-days">${date}</span>
         </div>
         <div >
-        <button onclick = "dec(${item.id})">-</button>
-        <span>${qty}</span>
-        <button onclick = "inc(${item.id})">+</button>
+        <button onclick = "dec(${item.id})" class = "qtyButton">-</button>
+        <span class = "qty">${qty}</span>
+        <button onclick = "inc(${item.id})" class = "qtyButton">+</button>
         </div>
         </div>
   
@@ -143,29 +143,29 @@ bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
   api();
 }
 loadBagItemObjects();
-function inc(itemId){
-  bagItems.map((e)=>{
-    if(e.id == undefined)return
-    if(e.id==itemId){
-    console.log(e.qty);
-    e.qty +=1  
-    localStorage.setItem("bagItems", JSON.stringify(bagItems));
-    console.log(e.qty);
-    loadBagItemObjects()
+function inc(itemId) {
+  bagItems.map((e) => {
+    if (e.id == undefined) return;
+    if (e.id == itemId) {
+      console.log(e.qty);
+      e.qty += 1;
+      localStorage.setItem("bagItems", JSON.stringify(bagItems));
+      console.log(e.qty);
+      loadBagItemObjects();
     }
-  })
+  });
 }
-function dec(itemId){
-  bagItems.map((e)=>{
-    if(e.id == undefined)return
-    if(e.id==itemId){
-    console.log(e.qty);
-    if(e.qty == 1)return
-    e.qty -=1  
-    localStorage.setItem("bagItems", JSON.stringify(bagItems));
-    loadBagItemObjects()
+function dec(itemId) {
+  bagItems.map((e) => {
+    if (e.id == undefined) return;
+    if (e.id == itemId) {
+      console.log(e.qty);
+      if (e.qty == 1) return;
+      e.qty -= 1;
+      localStorage.setItem("bagItems", JSON.stringify(bagItems));
+      loadBagItemObjects();
     }
-  })
+  });
 }
 
 function removeFromBag(itemId) {
@@ -176,4 +176,3 @@ function removeFromBag(itemId) {
   loadBagItemObjects();
   bagIcon();
 }
-
