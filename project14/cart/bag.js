@@ -1,4 +1,5 @@
 let bagItemObjects;
+let totalPrice;
 let containerElement = document.querySelector(".bag-items-container");
 
 function loadBagItemObjects() {
@@ -92,6 +93,7 @@ function loadBagItemObjects() {
           qty = e.qty;
         }
       });
+      totalPrice = Math.floor(item?.price * 8 )*qty
       const today = new Date();
       const date =
         today.getDate() +
@@ -127,6 +129,7 @@ function loadBagItemObjects() {
         <button onclick = "dec(${item.id})" class = "qtyButton">-</button>
         <span class = "qty">${qty}</span>
         <button onclick = "inc(${item.id})" class = "qtyButton">+</button>
+        <div><span class="return-period-days">Total price</span>₹ ${totalPrice}</div>
         </div>
         </div>
   

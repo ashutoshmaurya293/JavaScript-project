@@ -153,13 +153,14 @@
 }
 .qtyButton {
   font-size: 16px;
-  height: 25px;
+  height: 20px;
+  width: 20px;
   padding-bottom: 1.3px;
   background-color: #00000018;
   border: 1px solid #00000037;
   border-radius: 50%;
-  width: 25px;
   cursor: pointer;
+  margin-bottom: 5px;
   &:hover {
     background-color: #00000057;
   }
@@ -169,7 +170,6 @@
 }
 
 .qty {
-  /* height: 20px ; */
   padding: 3px 9px;
   margin: 0 3px;
   border: 1px solid rgba(0, 0, 0, 0.515);
