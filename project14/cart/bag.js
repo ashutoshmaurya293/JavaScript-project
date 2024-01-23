@@ -160,6 +160,7 @@ function dec(itemId){
     if(e.id == undefined)return
     if(e.id==itemId){
     console.log(e.qty);
+    if(e.qty == 1)return
     e.qty -=1  
     localStorage.setItem("bagItems", JSON.stringify(bagItems));
     loadBagItemObjects()
