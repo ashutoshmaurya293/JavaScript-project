@@ -2,8 +2,11 @@ let bagItemObjects;
 let containerElement = document.querySelector(".bag-items-container");
 
 function loadBagItemObjects() {
+  let iconQtyStr = localStorage.getItem("iconQty");
+  iconQty = iconQtyStr ? JSON.parse(iconQtyStr) : [];
+  let bagItemStr = localStorage.getItem("bagItems");
+bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
   // console.log(bagItems);
-  console.log(iconQty.length);
   const api = async () => {
     const loader = document.getElementById("loadingDiv");
     if (!loader) return;
@@ -121,7 +124,9 @@ function loadBagItemObjects() {
           <span class="delivery-details-days">${date}</span>
         </div>
         <div >
-        <div>${qty}</div>
+        <button onclick = "dec(${item.id})">-</button>
+        <span>${qty}</span>
+        <button onclick = "inc(${item.id})">+</button>
         </div>
         </div>
   
@@ -138,6 +143,29 @@ function loadBagItemObjects() {
   api();
 }
 loadBagItemObjects();
+function inc(itemId){
+  bagItems.map((e)=>{
+    if(e.id == undefined)return
+    if(e.id==itemId){
+    console.log(e.qty);
+    e.qty +=1  
+    localStorage.setItem("bagItems", JSON.stringify(bagItems));
+    console.log(e.qty);
+    loadBagItemObjects()
+    }
+  })
+}
+function dec(itemId){
+  bagItems.map((e)=>{
+    if(e.id == undefined)return
+    if(e.id==itemId){
+    console.log(e.qty);
+    e.qty -=1  
+    localStorage.setItem("bagItems", JSON.stringify(bagItems));
+    loadBagItemObjects()
+    }
+  })
+}
 
 function removeFromBag(itemId) {
   iconQty.pop();
@@ -147,5 +175,4 @@ function removeFromBag(itemId) {
   loadBagItemObjects();
   bagIcon();
 }
-let iconQtyStr = localStorage.getItem("iconQty");
-iconQty = iconQtyStr ? JSON.parse(iconQtyStr) : [];
+
