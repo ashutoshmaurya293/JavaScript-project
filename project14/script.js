@@ -38,36 +38,35 @@ function load() {
 }
 
 function bagIcon() {
-  bagLength.innerHTML = iconQty.length
-  bagLengthMobile.innerHTML = iconQty.length
+  bagLength.innerHTML = iconQty.length;
+  bagLengthMobile.innerHTML = iconQty.length;
 }
 
 function addToCart(id) {
   let obj = {
-    qty:1,
-    id:id
-  }
+    qty: 1,
+    id: id,
+  };
   if (bagItems.includes(id)) {
     //  bagItems.push(qty)
-    bagItems.map((e)=>{
+    bagItems.map((e) => {
       // console.log(e);
-      if(e.id==id){
-        e.qty = e.qty + 1 
+      if (e.id == id) {
+        e.qty = e.qty + 1;
         // console.log(bagItems);
       }
-    })
-    localStorage.setItem("bagItems", JSON.stringify(bagItems))
+    });
+    localStorage.setItem("bagItems", JSON.stringify(bagItems));
     // console.log(bagItems);
-  }
-  else {
-    iconQty.push(1)
+  } else {
+    iconQty.push(1);
     localStorage.setItem("iconQty", JSON.stringify(iconQty));
     console.log(iconQty);
     bagItems.push(id);
     bagItems.push(obj);
     localStorage.setItem("bagItems", JSON.stringify(bagItems));
     // console.log(bagItems);
-    
+
     bagIcon();
     show();
   }
