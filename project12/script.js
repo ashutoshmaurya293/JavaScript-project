@@ -1,20 +1,19 @@
-const AccesKey = "MReg00ZXxoRekpUkEdz7oeNd40XyF4FHo5Hog-KD5X8";
+const AccesKey = "HXu4G3KUQYPiOHNF4RR3k9z9wF528bvq4tDLbpu1nQg";
 let searchInput = document.getElementById("searchInput");
 let button = document.getElementById("btn");
 let showData = document.getElementById("showData");
 let moreBTN = document.getElementById("moreBTN");
-let loader = document.querySelector(".loader")
-let moreloader = document.querySelector(".moreloader")
+let loader = document.querySelector(".loader");
 let page = 2;
 
+loader.style.display = "none";
 const getData = async (searchInputValue, pageNo) => {
   try {
     let fech = await fetch(
       `https://api.unsplash.com/search/photos?query=${searchInputValue}&per_page=28&page=${pageNo}&client_id=${AccesKey}`
     );
     let jsonData = await fech.json();
-    loader.style.display = "none"
-    moreloader.style.display = "none"
+    loader.style.display = "none";
 
     if (searchInput.value == "") {
       showData.innerHTML = `
@@ -40,14 +39,13 @@ const getData = async (searchInputValue, pageNo) => {
 };
 
 function startLoading() {
-  loader.style.display = "inline"
-    showData.innerHTML = "";
-    const searchInputValue = searchInput.value;
-    getData(searchInputValue);
+  loader.style.display = "inline";
+  showData.innerHTML = "";
+  const searchInputValue = searchInput.value;
+  getData(searchInputValue);
 }
 
 function Loading() {
-  moreloader.style.display = "inline"
-    const searchInputValue = searchInput.value;
-    getData(searchInputValue, page++);
+  const searchInputValue = searchInput.value;
+  getData(searchInputValue, page++);
 }
