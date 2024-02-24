@@ -52,6 +52,7 @@ li {
 }
 label {
   padding: 1rem;
+  cursor: pointer;
 }
 input {
   width: 20px;
