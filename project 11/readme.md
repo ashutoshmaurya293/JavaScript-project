@@ -9,3 +9,6 @@ JavaScript: Implemented the functionality for quiz logic, score tracking, and us
 # Features:
 🔹 User-Friendly Interface: Intuitive design for seamless navigation and usability.
 🔹 Responsive Design: Works flawlessly across different devices and screen sizes.
+
+# Live
+https://quiz-app-js-css.netlify.app/
