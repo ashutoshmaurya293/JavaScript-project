@@ -50,7 +50,7 @@ const SimilerApi = async (category) => {
   <div class="cart">
 
   <a href="./index.html">
-  <a href="./singlePage/index.html">
+  <a href="./index.html">
   <div class="cartImg" onclick="singleCart(${e.id})">
     <img
       src=${e?.image}

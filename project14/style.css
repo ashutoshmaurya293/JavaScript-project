@@ -206,7 +206,7 @@ input {
 }
 .cart {
   height: 400px;
-  width: 240px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   border: 3.5px solid rgba(0, 0, 0, 0.11);

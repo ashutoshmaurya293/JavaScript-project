@@ -119,13 +119,16 @@ footer{
 #similer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  width: 82%;
+  flex-wrap: wrap;
   gap: 5rem;
+  margin: 0 auto;
   margin-bottom: 3rem;
 }
 @media (max-width: 768px) {
   main {
-    min-height: 80vh;
+    min-height: 70vh;
     width: 100%;
   }
   .card {
@@ -133,7 +136,7 @@ footer{
     align-items: center;
     flex-direction: column;
     width: 100%;
-    min-height: 85%;
+    min-height: 70%;
     position: absolute;
     background: white;
     margin: 0 auto;
@@ -158,5 +161,15 @@ footer{
   }
   .card:hover {
     box-shadow: none;
+  }
+  #similer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem auto;
+    /* margin-bottom: 3rem; */
   }
 }
