@@ -27,13 +27,17 @@ function loadBagItemObjects() {
     displayBagSummary();
     function displayBagSummary(price) {
       let bagSummaryElement = document.querySelector(".bag-summary");
+      const sum = iconQty.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
       let Convenience = 0;
-      if (iconQty > 0) {
+      if (sum > 0) {
         Convenience = 99;
       }
       let totalMRP = 0;
       let totalDiscount = 0;
-      console.log(bagItems);
+      // console.log(bagItems);
       bagItemObjects.forEach((bagItem) => {
         if (bagItem?.price !== undefined) {
           bagItems.map((e) => {
@@ -48,7 +52,7 @@ function loadBagItemObjects() {
       let finalPayment = totalMRP - totalDiscount + Convenience;
       bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
-    <div class="price-header">PRICE DETAILS (${iconQty} Items) </div>
+    <div class="price-header">PRICE DETAILS (${sum} Items) </div>
     <div class="price-item">
       <span class="price-item-tag">Total MRP</span>
       <span class="price-item-value">₹${mrp}</span>
