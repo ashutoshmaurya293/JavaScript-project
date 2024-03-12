@@ -27,7 +27,7 @@ function loadBagItemObjects() {
     displayBagSummary();
     function displayBagSummary(price) {
       let bagSummaryElement = document.querySelector(".bag-summary");
-      let totalItem = bagItems.length;
+      let totalItem = iconQty;
       let Convenience = 0;
       if (totalItem > 0) {
         Convenience = 99;
