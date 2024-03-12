@@ -48,7 +48,11 @@ const SimilerApi = async (category) => {
   result.map((e) => {
     similer.innerHTML += ` 
   <div class="cart">
+<<<<<<< HEAD
   <a href="./index.html">
+=======
+  <a href="./singlePage/index.html">
+>>>>>>> 5b82637aa0d45ac539c5153e108dc75ae42497cf
   <div class="cartImg" onclick="singleCart(${e.id})">
     <img
       src=${e?.image}
