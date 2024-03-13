@@ -2,7 +2,6 @@ let input = document.getElementById("input");
 if ((input.value = "undefined")) {
   input.value = "";
 }
-console.log(typeof input.value);
 let num = "";
 let buttons = document.querySelectorAll("button");
 
