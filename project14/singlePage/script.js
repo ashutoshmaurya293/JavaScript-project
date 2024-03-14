@@ -8,6 +8,7 @@ const loaderCartSimiler = document.getElementById("loaderCartSimiler");
 const api = async () => {
   // first loader
   const loader = document.getElementById("loadingDiv");
+  loaderCartSimiler.style.display = "none";
   const url = `https://fakestoreapi.com/products/${singleItem}`;
   const result = await fetch(url).then((res) => res.json());
   // console.log(result);

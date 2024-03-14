@@ -427,6 +427,7 @@ input {
   align-items: flex-end;
   overflow: hidden;
   padding: 20px;
+  z-index: 99;
 }
 .toast {
   position: relative;

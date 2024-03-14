@@ -145,22 +145,27 @@ footer {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    min-height: 75%;
+    min-height: 100%;
     position: absolute;
     background: white;
-    margin: 0 auto;
+    margin: 3rem auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: none;
     transition: all 0.3s;
+    position: relative;
+  }
+  .card .photo img {
+    max-height: 240px;
   }
   .card .photo {
     padding: 30px;
     width: 100%;
+    height: 100%;
     text-align: center;
     float: left;
-    overflow: hidden;
+    overflow: visible;
   }
   .card .description {
     padding: 30px;
@@ -178,7 +183,8 @@ footer {
     width: 100%;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 6rem auto;
+    margin: 10rem auto;
+    position: relative;
     /* margin-bottom: 3rem; */
   }
 }
